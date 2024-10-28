@@ -8,6 +8,11 @@
     name: nano
     state: latest
 
+- name: Install tar
+  yum:
+    name: tar
+    state: latest
+
 - name: Create zookeeper group
   group:
     name: "{{ zookeeper_group }}"

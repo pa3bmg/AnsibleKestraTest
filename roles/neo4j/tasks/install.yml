@@ -118,4 +118,4 @@
   when: neo4j_password is defined and neo4j_password|string
 
 - name: Setup firewall Neo4j
-  ansible.builtin.include_tasks: firewall.yaml
+  ansible.builtin.include_tasks: firewall.yml
