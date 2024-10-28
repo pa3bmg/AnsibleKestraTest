@@ -1,0 +1,29 @@
+---
+###########################################
+## Main module for ansible rol           ##
+###########################################
+
+- name: Load OS-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - ../vars/{{ ansible_os_family }}.yml
+    - ../vars/{{ ansible_distribution_release }}.yml
+    - ../vars/empty.yml
+  tags:
+    - always
+
+- name: Install Zookeeper
+  ansible.builtin.include_tasks: install.yml
+  when: action == "install"
+
+- name: Uninstall Zookeeper
+  ansible.builtin.include_tasks: uninstall.yml
+  when: action == "uninstall"
+
+- name: Start Zookeeper
+  ansible.builtin.include_tasks: start.yml
+  when: action == "start"
+
+- name: Stop Zookeeper
+  ansible.builtin.include_tasks: stop.yml
+  when: action == "stop"

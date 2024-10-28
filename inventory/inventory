@@ -1,0 +1,8 @@
+[kafka]
+192.168.178.205
+
+[kafka:vars]
+ansible_connection=ssh 
+ansible_ssh_user=maintain 
+ansible_ssh_pass=maintain
+ansible_become_pass=maintain

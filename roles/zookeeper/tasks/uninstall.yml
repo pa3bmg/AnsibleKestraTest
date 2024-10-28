@@ -1,0 +1,43 @@
+---
+#########################################################
+## Uninstallation                                      ##
+#########################################################
+
+- name: Stop Zookeeper
+  ansible.builtin.include_tasks: stop.yml
+
+- name: Remove Zookeeper installation dir {{ zookeeper_install_dir }}
+  file:
+    path: "{{ zookeeper_install_dir }}"
+    state: absent
+  ignore_errors: true
+
+- name: Remove Zookeeper data dir {{ zookeeper_data_dir }}
+  file:
+    path: "{{ zookeeper_data_dir }}"
+    state: absent
+  ignore_errors: true
+
+- name: Remove Zookeeper log dir {{ zookeeper_log_dir }}
+  file:
+    path: "{{ zookeeper_log_dir }}"
+    state: absent
+  ignore_errors: true
+
+- name: Remove Zookeeper data log dir {{ zookeeper_data_log_dir }}
+  file:
+    path: "{{ zookeeper_dir }}"
+    state: absent
+  ignore_errors: true
+
+- name: disable the ZooKeeper service
+  systemd:
+    name: zookeeper.service
+    enabled: no
+  ignore_errors: true
+
+- name: Remove system file
+  file:
+    path: "{{ zookeeper_unit_path }}"
+    state: absent
+  ignore_errors: true

@@ -1,0 +1,13 @@
+---
+#########################################################
+## Start             f                                 ##
+#########################################################
+
+- name: Install and start the kafka service
+  service:
+    name: kafka
+    state: started
+    enabled: yes
+  tags:
+    - kafka_service
+    - kafka-service-start

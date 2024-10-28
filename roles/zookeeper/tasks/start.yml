@@ -1,0 +1,13 @@
+---
+#########################################################
+## Start                                               ##
+#########################################################
+
+- name: Start the ZooKeeper service
+  systemd:
+    name: zookeeper.service
+    state: started
+    enabled: yes
+  tags:
+    - zookeeper_service
+    - zookeeper_service-start

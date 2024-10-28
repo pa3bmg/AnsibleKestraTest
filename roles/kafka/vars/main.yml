@@ -1,0 +1,16 @@
+---
+# (C) 2024 TSM
+# All rights reserved
+# Licensed under the MIT license
+
+actions:
+  - install:
+    description: "Installation Kafka."
+  - uninstall:
+    description: "De-installation Kafka."
+  - configure:
+    description: "Configure Kafka."
+  - start:
+    description: "Start Kafka Service."
+  - stop:
+    description: "Stop Kafka Service."

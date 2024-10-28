@@ -1,0 +1,16 @@
+---
+# (C) 2024 TSM
+# All rights reserved
+# Licensed under the MIT license
+
+actions:
+  - install:
+    description: "Installation Zookeeper."
+  - uninstall:
+    description: "De-installation Zookeeper."
+  - configure:
+    description: "Configure Zookeeper."
+  - start:
+    description: "Start Zookeeper Service."
+  - stop:
+    description: "Stop Zookeeper Service."

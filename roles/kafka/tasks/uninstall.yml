@@ -1,0 +1,31 @@
+---
+#########################################################
+## Uninstallation                                      ##
+#########################################################
+
+- name: Stop Kafka
+  ansible.builtin.include_tasks: stop.yaml
+
+- name: Remove Kafka installation dir {{ kafka_root_dir }}/kafka_{{ kafka_scala_version }}-{{ kafka_version }}
+  file:
+    path: "{{ kafka_root_dir }}/kafka_{{ kafka_scala_version }}-{{ kafka_version }}"
+    state: absent
+  ignore_errors: true
+
+- name: Remove Kafka installation dir {{ kafka_dir }}
+  file:
+    path: "{{ kafka_dir }}"
+    state: absent
+  ignore_errors: true
+
+- name: disable the Kafka service
+  systemd:
+    name: kafka
+    enabled: no
+  ignore_errors: true
+
+- name: Remove system file
+  file:
+    path: "{{ kafka_unit_path }}"
+    state: absent
+  ignore_errors: true

@@ -1,0 +1,18 @@
+---
+# (C) 2024 TSM
+# All rights reserved
+# Licensed under the MIT license
+
+actions:
+  - install:
+    description: "Installation Neo4j."
+  - uninstall:
+    description: "De-installation Neo4j."
+  - configure:
+    description: "Configure Neo4j."
+  - start:
+    description: "Start Neo4j Service."
+  - stop:
+    description: "Stop Neo4j Service."
+
+awd: "{{lookup('pipe', 'pwd')}}"

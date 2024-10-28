@@ -1,0 +1,13 @@
+---
+- name: Enable service firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Setup firewallPort kafka
+  firewalld:
+    port: 9092/tcp
+    permanent: true
+    immediate: true
+    state: enabled

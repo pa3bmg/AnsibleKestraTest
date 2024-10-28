@@ -1,0 +1,13 @@
+---
+#########################################################
+## Stop                                               ##
+#########################################################
+
+- name: Install and start the kafka service
+  service:
+    name: kafka
+    state: stopped
+    enabled: yes
+  tags:
+    - kafka_service
+    - kafka-service-stop
