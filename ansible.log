@@ -9,3 +9,829 @@ The offending line appears to be:
 - name: Install Zookeeper
   ^ here
 
+2024-10-28 12:10:21,284 p=86756 u=tonsmink n=ansible | ERROR! this task 'ansible.builtin.include_tasks' has extra params, which is only allowed in the following modules: set_fact, win_shell, include_role, include_vars, command, shell, import_tasks, meta, add_host, include_tasks, raw, win_command, include, import_role, group_by, script
+
+The error appears to be in '/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/main.yml': line 15, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install Zookeeper
+  ^ here
+
+2024-10-28 13:17:06,119 p=2071 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:17:06,141 p=2071 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:17:06,142 p=2071 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:17:45,867 p=2071 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:17:45,868 p=2071 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:17:47,037 p=2071 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:17:47,039 p=2071 u=tonsmink n=ansible | [WARNING]: SELinux state temporarily changed from 'enforcing' to 'permissive'. State change will take effect next reboot.
+
+2024-10-28 13:17:47,039 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:18:46,018 p=2071 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:18:46,019 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:18:46,095 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Load OS-specific variables] *****************************************************************************************************************************************************
+2024-10-28 13:18:46,097 p=2071 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/vars/../vars/RedHat.yml)
+2024-10-28 13:18:46,137 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Install Zookeeper] **************************************************************************************************************************************************************
+2024-10-28 13:18:46,168 p=2071 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/install.yml for 172.16.131.179
+2024-10-28 13:18:59,264 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Install nano] *******************************************************************************************************************************************************************
+2024-10-28 13:18:59,265 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:19:00,452 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper group] *********************************************************************************************************************************************************
+2024-10-28 13:19:00,454 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:19:01,511 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper user] **********************************************************************************************************************************************************
+2024-10-28 13:19:01,512 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:19:02,240 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Check if ZooKeeper has already been downloaded and unpacked] ********************************************************************************************************************
+2024-10-28 13:19:02,241 p=2071 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:19:30,558 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Download Apache ZooKeeper] ******************************************************************************************************************************************************
+2024-10-28 13:19:30,559 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:19:31,308 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Create ZooKeeper installation dir /opt/apache-zookeeper-3.7.2] ******************************************************************************************************************
+2024-10-28 13:19:31,309 p=2071 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:19:32,456 p=2071 u=tonsmink n=ansible | TASK [zookeeper : Unpack Apache ZooKeeper] ********************************************************************************************************************************************************
+2024-10-28 13:19:32,457 p=2071 u=tonsmink n=ansible | fatal: [172.16.131.179]: FAILED! => {"changed": false, "msg": "Failed to find handler for \"/tmp/apache-zookeeper-3.7.2-bin.tar.gz\". Make sure the required command to extract the file is installed.\nUnable to find required 'gtar' or 'tar' binary in the path\nUnable to find required 'unzip' or 'zipinfo' binary in the path."}
+2024-10-28 13:19:32,459 p=2071 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:19:32,460 p=2071 u=tonsmink n=ansible | 172.16.131.179             : ok=11   changed=7    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-10-28 13:27:36,748 p=4233 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:27:36,769 p=4233 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:27:36,770 p=4233 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:28:15,873 p=4233 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:28:15,874 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:16,904 p=4233 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:28:16,906 p=4233 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:28:16,906 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:18,584 p=4233 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:28:18,585 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:18,643 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Load OS-specific variables] *****************************************************************************************************************************************************
+2024-10-28 13:28:18,644 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/vars/../vars/RedHat.yml)
+2024-10-28 13:28:18,676 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Install Zookeeper] **************************************************************************************************************************************************************
+2024-10-28 13:28:18,706 p=4233 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/install.yml for 172.16.131.179
+2024-10-28 13:28:20,128 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Install nano] *******************************************************************************************************************************************************************
+2024-10-28 13:28:20,129 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:21,573 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Install tar] ********************************************************************************************************************************************************************
+2024-10-28 13:28:21,574 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:22,558 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper group] *********************************************************************************************************************************************************
+2024-10-28 13:28:22,560 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:23,577 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper user] **********************************************************************************************************************************************************
+2024-10-28 13:28:23,578 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:24,314 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Check if ZooKeeper has already been downloaded and unpacked] ********************************************************************************************************************
+2024-10-28 13:28:24,315 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:25,166 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Create symlink to ZooKeeper installation] ***************************************************************************************************************************************
+2024-10-28 13:28:25,167 p=4233 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:28:25,735 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Create directory for snapshot files and myid file] ******************************************************************************************************************************
+2024-10-28 13:28:25,736 p=4233 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:28:26,295 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Create directory for transaction log files] *************************************************************************************************************************************
+2024-10-28 13:28:26,296 p=4233 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:28:26,856 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper log directory] *************************************************************************************************************************************************
+2024-10-28 13:28:26,856 p=4233 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:28:28,275 p=4233 u=tonsmink n=ansible | TASK [zookeeper : Template configuration file to zoo.cfg] *****************************************************************************************************************************************
+2024-10-28 13:28:28,277 p=4233 u=tonsmink n=ansible | fatal: [172.16.131.179]: FAILED! => {"changed": false, "checksum": "300b65310938cdc3e01ddbdee4601ca7afedd122", "msg": "Destination directory /opt/zookeeper/conf does not exist"}
+2024-10-28 13:28:28,280 p=4233 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:28:28,280 p=4233 u=tonsmink n=ansible | 172.16.131.179             : ok=14   changed=3    unreachable=0    failed=1    skipped=3    rescued=0    ignored=0   
+2024-10-28 13:30:46,943 p=5117 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:30:46,964 p=5117 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:30:46,966 p=5117 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:31:25,912 p=5117 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:31:25,914 p=5117 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:31:26,968 p=5117 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:31:26,971 p=5117 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:31:26,971 p=5117 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:31:28,611 p=5117 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:31:28,613 p=5117 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:31:28,669 p=5117 u=tonsmink n=ansible | TASK [zookeeper : Load OS-specific variables] *****************************************************************************************************************************************************
+2024-10-28 13:31:28,670 p=5117 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/vars/../vars/RedHat.yml)
+2024-10-28 13:31:28,736 p=5117 u=tonsmink n=ansible | TASK [zookeeper : Uninstall Zookeeper] ************************************************************************************************************************************************************
+2024-10-28 13:31:28,755 p=5117 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/uninstall.yml for 172.16.131.179
+2024-10-28 13:31:28,780 p=5117 u=tonsmink n=ansible | TASK [zookeeper : Stop Zookeeper] *****************************************************************************************************************************************************************
+2024-10-28 13:31:28,795 p=5117 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/stop.yml for 172.16.131.179
+2024-10-28 13:31:29,838 p=5117 u=tonsmink n=ansible | TASK [zookeeper : Start the ZooKeeper service] ****************************************************************************************************************************************************
+2024-10-28 13:31:29,840 p=5117 u=tonsmink n=ansible | fatal: [172.16.131.179]: FAILED! => {"changed": false, "msg": "Could not find the requested service zookeeper.service: host"}
+2024-10-28 13:31:29,843 p=5117 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:31:29,843 p=5117 u=tonsmink n=ansible | 172.16.131.179             : ok=6    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0   
+2024-10-28 13:32:40,906 p=5628 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:32:40,929 p=5628 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:32:40,930 p=5628 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:33:19,880 p=5628 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:33:19,882 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:20,948 p=5628 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:33:20,949 p=5628 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:33:20,949 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:22,581 p=5628 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:33:22,582 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:22,639 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Load OS-specific variables] *****************************************************************************************************************************************************
+2024-10-28 13:33:22,640 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/vars/../vars/RedHat.yml)
+2024-10-28 13:33:22,673 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Install Zookeeper] **************************************************************************************************************************************************************
+2024-10-28 13:33:22,703 p=5628 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/install.yml for 172.16.131.179
+2024-10-28 13:33:24,112 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Install nano] *******************************************************************************************************************************************************************
+2024-10-28 13:33:24,113 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:25,535 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Install tar] ********************************************************************************************************************************************************************
+2024-10-28 13:33:25,536 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:26,521 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper group] *********************************************************************************************************************************************************
+2024-10-28 13:33:26,522 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:27,520 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper user] **********************************************************************************************************************************************************
+2024-10-28 13:33:27,521 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:28,241 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Check if ZooKeeper has already been downloaded and unpacked] ********************************************************************************************************************
+2024-10-28 13:33:28,242 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:42,044 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Download Apache ZooKeeper] ******************************************************************************************************************************************************
+2024-10-28 13:33:42,045 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:42,771 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create ZooKeeper installation dir /opt/apache-zookeeper-3.7.2] ******************************************************************************************************************
+2024-10-28 13:33:42,772 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:46,105 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Unpack Apache ZooKeeper] ********************************************************************************************************************************************************
+2024-10-28 13:33:46,106 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:46,665 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create symlink to ZooKeeper installation] ***************************************************************************************************************************************
+2024-10-28 13:33:46,665 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:47,219 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create directory for snapshot files and myid file] ******************************************************************************************************************************
+2024-10-28 13:33:47,220 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:47,780 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create directory for transaction log files] *************************************************************************************************************************************
+2024-10-28 13:33:47,780 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:48,360 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper log directory] *************************************************************************************************************************************************
+2024-10-28 13:33:48,361 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:49,773 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Template configuration file to zoo.cfg] *****************************************************************************************************************************************
+2024-10-28 13:33:49,774 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:50,329 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create directory for symlink to ZooKeeper configuration file] *******************************************************************************************************************
+2024-10-28 13:33:50,330 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:50,893 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Create symlink to ZooKeeper configuration file] *********************************************************************************************************************************
+2024-10-28 13:33:50,894 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:51,944 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Template myid to /var/lib/zookeeper/myid] ***************************************************************************************************************************************
+2024-10-28 13:33:51,946 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:52,997 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Template /etc/default] **********************************************************************************************************************************************************
+2024-10-28 13:33:52,998 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:53,674 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Set maximum log rollover history] ***********************************************************************************************************************************************
+2024-10-28 13:33:53,675 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:33:54,727 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Template ZooKeeper systemd service file] ****************************************************************************************************************************************
+2024-10-28 13:33:54,728 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:57,090 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Start the ZooKeeper service] ****************************************************************************************************************************************************
+2024-10-28 13:33:57,091 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:57,646 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Delete /tmp/apache-zookeeper-3.7.2-bin.tar.gz file] *****************************************************************************************************************************
+2024-10-28 13:33:57,647 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:33:57,683 p=5628 u=tonsmink n=ansible | TASK [zookeeper : Set fact zookeeper_installed] ***************************************************************************************************************************************************
+2024-10-28 13:33:57,683 p=5628 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:34:00,594 p=5628 u=tonsmink n=ansible | RUNNING HANDLER [zookeeper : Restart ZooKeeper service] *******************************************************************************************************************************************
+2024-10-28 13:34:00,595 p=5628 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:34:00,606 p=5628 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:34:00,606 p=5628 u=tonsmink n=ansible | 172.16.131.179             : ok=28   changed=11   unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-10-28 13:34:56,542 p=6472 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:34:56,562 p=6472 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:34:56,563 p=6472 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:35:35,643 p=6472 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:35:35,644 p=6472 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:35:36,688 p=6472 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:35:36,689 p=6472 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:35:36,689 p=6472 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:35:38,669 p=6472 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:35:38,670 p=6472 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:35:38,728 p=6472 u=tonsmink n=ansible | TASK [kafka : Load OS-specific variables] *********************************************************************************************************************************************************
+2024-10-28 13:35:38,729 p=6472 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/vars/../vars/RedHat.yml)
+2024-10-28 13:35:38,761 p=6472 u=tonsmink n=ansible | TASK [kafka : Install kafka] **********************************************************************************************************************************************************************
+2024-10-28 13:35:38,796 p=6472 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/tasks/install.yml for 172.16.131.179
+2024-10-28 13:35:39,795 p=6472 u=tonsmink n=ansible | TASK [kafka : Create kafka group] *****************************************************************************************************************************************************************
+2024-10-28 13:35:39,796 p=6472 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:35:40,831 p=6472 u=tonsmink n=ansible | TASK [kafka : Create kafka user] ******************************************************************************************************************************************************************
+2024-10-28 13:35:40,832 p=6472 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:35:41,548 p=6472 u=tonsmink n=ansible | TASK [kafka : Check if Kafka has already been downloaded and unpacked] ****************************************************************************************************************************
+2024-10-28 13:35:41,549 p=6472 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:36:09,566 p=6472 u=tonsmink n=ansible | TASK [kafka : Download Apache Kafka] **************************************************************************************************************************************************************
+2024-10-28 13:36:09,567 p=6472 u=tonsmink n=ansible | fatal: [172.16.131.179]: FAILED! => {"changed": false, "dest": "/tmp", "elapsed": 29, "gid": 0, "group": "root", "mode": "01777", "msg": "Request failed: <urlopen error [Errno -2] Name or service not known>", "owner": "root", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "state": "directory", "uid": 0, "url": "http://www-eu.apache.org/dist/kafka/3.6.2/kafka_2.13-3.6.2.tgz"}
+2024-10-28 13:36:09,569 p=6472 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:36:09,569 p=6472 u=tonsmink n=ansible | 172.16.131.179             : ok=8    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-10-28 13:40:14,729 p=7784 u=tonsmink n=ansible | ansible-playbook [core 2.13.13]
+  config file = /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/ansible.cfg
+  configured module search path = ['/Users/tonsmink/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible
+  ansible collection location = /Users/tonsmink/.ansible/collections:/usr/share/ansible/collections
+  executable location = /Library/Frameworks/Python.framework/Versions/3.8/bin/ansible-playbook
+  python version = 3.8.1 (v3.8.1:1b293b6006, Dec 18 2019, 14:08:53) [Clang 6.0 (clang-600.0.57)]
+  jinja version = 3.1.4
+  libyaml = True
+2024-10-28 13:40:14,730 p=7784 u=tonsmink n=ansible | Using /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/ansible.cfg as config file
+2024-10-28 13:40:14,742 p=7784 u=tonsmink n=ansible | host_list declined parsing /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/inventory/inventory as it did not pass its verify_file() method
+2024-10-28 13:40:14,751 p=7784 u=tonsmink n=ansible | auto declined parsing /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/inventory/inventory as it did not pass its verify_file() method
+2024-10-28 13:40:14,758 p=7784 u=tonsmink n=ansible | Parsed /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/inventory/inventory inventory source with ini plugin
+2024-10-28 13:40:15,305 p=7784 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:40:15,325 p=7784 u=tonsmink n=ansible | Skipping callback 'actionable', as we already have a stdout callback.
+2024-10-28 13:40:15,325 p=7784 u=tonsmink n=ansible | Skipping callback 'counter_enabled', as we already have a stdout callback.
+2024-10-28 13:40:15,325 p=7784 u=tonsmink n=ansible | Skipping callback 'debug', as we already have a stdout callback.
+2024-10-28 13:40:15,325 p=7784 u=tonsmink n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-10-28 13:40:15,325 p=7784 u=tonsmink n=ansible | Skipping callback 'dense', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'full_skip', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'json', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'minimal', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'null', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'oneline', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'skippy', as we already have a stdout callback.
+2024-10-28 13:40:15,326 p=7784 u=tonsmink n=ansible | Skipping callback 'stderr', as we already have a stdout callback.
+2024-10-28 13:40:15,327 p=7784 u=tonsmink n=ansible | Skipping callback 'unixy', as we already have a stdout callback.
+2024-10-28 13:40:15,327 p=7784 u=tonsmink n=ansible | Skipping callback 'yaml', as we already have a stdout callback.
+2024-10-28 13:40:15,327 p=7784 u=tonsmink n=ansible | PLAYBOOK: example_kafka_server.yml ****************************************************************************************************************************************************************
+2024-10-28 13:40:15,327 p=7784 u=tonsmink n=ansible | 1 plays in example_kafka_server.yml
+2024-10-28 13:40:15,328 p=7784 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:40:15,329 p=7784 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:40:15,364 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:15,366 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:40:15,611 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:40:15,613 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:15,614 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767 `" && echo ansible-tmp-1730119215.6127481-7791-120830928004767="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767 `" ) && sleep 0'"'"''
+2024-10-28 13:40:15,668 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119215.6127481-7791-120830928004767=/home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767\n', b'')
+2024-10-28 13:40:16,059 p=7791 u=tonsmink n=ansible | <172.16.131.179> Attempting python interpreter discovery
+2024-10-28 13:40:16,060 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:16,061 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo PLATFORM; uname; echo FOUND; command -v '"'"'"'"'"'"'"'"'python3.10'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.9'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.8'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.6'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python3.5'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python3'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/libexec/platform-python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python2.7'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'/usr/bin/python'"'"'"'"'"'"'"'"'; command -v '"'"'"'"'"'"'"'"'python'"'"'"'"'"'"'"'"'; echo ENDFOUND && sleep 0'"'"''
+2024-10-28 13:40:16,108 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'PLATFORM\nLinux\nFOUND\n/usr/libexec/platform-python\nENDFOUND\n', b'')
+2024-10-28 13:40:16,110 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:16,112 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'/usr/libexec/platform-python && sleep 0'"'"''
+2024-10-28 13:40:16,202 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'{"platform_dist_result": ["centos", "8.10", "Green Obsidian"], "osrelease_content": "NAME=\\"Rocky Linux\\"\\nVERSION=\\"8.10 (Green Obsidian)\\"\\nID=\\"rocky\\"\\nID_LIKE=\\"rhel centos fedora\\"\\nVERSION_ID=\\"8.10\\"\\nPLATFORM_ID=\\"platform:el8\\"\\nPRETTY_NAME=\\"Rocky Linux 8.10 (Green Obsidian)\\"\\nANSI_COLOR=\\"0;32\\"\\nLOGO=\\"fedora-logo-icon\\"\\nCPE_NAME=\\"cpe:/o:rocky:rocky:8:GA\\"\\nHOME_URL=\\"https://rockylinux.org/\\"\\nBUG_REPORT_URL=\\"https://bugs.rockylinux.org/\\"\\nSUPPORT_END=\\"2029-05-31\\"\\nROCKY_SUPPORT_PRODUCT=\\"Rocky-Linux-8\\"\\nROCKY_SUPPORT_PRODUCT_VERSION=\\"8.10\\"\\nREDHAT_SUPPORT_PRODUCT=\\"Rocky Linux\\"\\nREDHAT_SUPPORT_PRODUCT_VERSION=\\"8.10\\"\\n"}\n', b'')
+2024-10-28 13:40:16,206 p=7791 u=tonsmink n=ansible | Using module file /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/modules/setup.py
+2024-10-28 13:40:16,208 p=7791 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpnj7ul7h7 TO /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/AnsiballZ_setup.py
+2024-10-28 13:40:16,209 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:40:16,277 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpnj7ul7h7 /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/AnsiballZ_setup.py\n', b'')
+2024-10-28 13:40:16,278 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:16,280 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/ /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/AnsiballZ_setup.py && sleep 0'"'"''
+2024-10-28 13:40:16,324 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:16,327 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:16,328 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=axkqfoeqxdzbafykiwcugnmvvluqhotr] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-axkqfoeqxdzbafykiwcugnmvvluqhotr ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/AnsiballZ_setup.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:40:16,412 p=7791 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:40:54,258 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'\r\n\r\n{"ansible_facts": {"ansible_local": {}, "ansible_user_id": "root", "ansible_user_uid": 0, "ansible_user_gid": 0, "ansible_user_gecos": "root", "ansible_user_dir": "/root", "ansible_user_shell": "/bin/bash", "ansible_real_user_id": 0, "ansible_effective_user_id": 0, "ansible_real_group_id": 0, "ansible_effective_group_id": 0, "ansible_system": "Linux", "ansible_kernel": "4.18.0-553.el8_10.x86_64", "ansible_kernel_version": "#1 SMP Fri May 24 13:05:10 UTC 2024", "ansible_machine": "x86_64", "ansible_python_version": "3.6.8", "ansible_fqdn": "kafka", "ansible_hostname": "kafka", "ansible_nodename": "kafka", "ansible_domain": "", "ansible_userspace_bits": "64", "ansible_architecture": "x86_64", "ansible_userspace_architecture": "x86_64", "ansible_machine_id": "f49297051bba4422b152d7cf03965a61", "ansible_distribution": "Rocky", "ansible_distribution_release": "Green Obsidian", "ansible_distribution_version": "8.10", "ansible_distribution_major_version": "8", "ansible_distribution_file_path": "/etc/redhat-release", "ansible_distribution_file_variety": "RedHat", "ansible_distribution_file_parsed": true, "ansible_os_family": "RedHat", "ansible_apparmor": {"status": "disabled"}, "ansible_iscsi_iqn": "", "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABgQDHXWqrCDkT7D7kSNvglDc1ScRSDw+wTPeHLNYevAK4O2Vk1MUYL4JiB5yF5pgyU+l1UC55fqcIScEGDGfICOJFUge22NErZ7QDF38Y2sqU+97t5HLUVOuWLxTTfSk6Jvc4CWlm+HVFP9ex2Rtnq5iPz/gti1wUflgv/OQN2Nmh9kOJGiuS51/rLDt2v3Xwv8uozISUSMEGX9eWCzIq8O0L2MGKRtZ1GGNgcPSoqyzL60VsBBBpBB5l6gzMhvX6R9m0FdT7yFvQB7ze6kQ09veZHyLggYhFSxiz9921VY8wKzK3rkt/yatv01whY+m52UJTy1F64WBc9YeVER7jOvHRXBQbvCGKpOIXDaFIR1XMw0Pn0zuQ9d080lBgT2EY3Vvk4c5KzKVbWvg1lWi0cZSlw+9vn7g7LLcfV0XhVWk3fpZ697e7ZoUXTS1LyqiA3fdaxcW5bV0I4vmKKFpHNmxKDz3XwzfLJuSLlH7hGqP/wtQwUPM5Db1w5xbK1GjN9qc=", "ansible_ssh_host_key_rsa_public_keytype": "ssh-rsa", "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ0+ZpfRZFg9MU6Dt4vwcTdCuqeIQwDtUcR+H17vJvwk9diGajZSxNLmt1tB6TrZXbW98ATo6/8M7bNstRmvIYA=", "ansible_ssh_host_key_ecdsa_public_keytype": "ecdsa-sha2-nistp256", "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIKhiJgupH325RTo/XhviYEE1QvUCpXa+4gLDKlEMLdG3", "ansible_ssh_host_key_ed25519_public_keytype": "ssh-ed25519", "ansible_fibre_channel_wwn": [], "ansible_selinux_python_present": true, "ansible_selinux": {"status": "enabled", "policyvers": 33, "config_mode": "disabled", "mode": "permissive", "type": "targeted"}, "ansible_virtualization_role": "guest", "ansible_virtualization_type": "VMware", "ansible_virtualization_tech_guest": ["VMware"], "ansible_virtualization_tech_host": [], "ansible_is_chroot": false, "ansible_lsb": {}, "ansible_env": {"LS_COLORS": "rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", "LANG": "en_US.UTF-8", "SUDO_GID": "1000", "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-axkqfoeqxdzbafykiwcugnmvvluqhotr ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/AnsiballZ_setup.py", "USER": "root", "PWD": "/home/maintain", "HOME": "/root", "SUDO_USER": "maintain", "SUDO_UID": "1000", "MAIL": "/var/mail/root", "SHELL": "/bin/bash", "TERM": "xterm-256color", "SHLVL": "1", "LOGNAME": "root", "PATH": "/sbin:/bin:/usr/sbin:/usr/bin", "_": "/usr/libexec/platform-python"}, "ansible_system_capabilities_enforced": "False", "ansible_system_capabilities": [], "ansible_processor": ["0", "GenuineIntel", "Intel(R) Core(TM) i7-4770HQ CPU @ 2.20GHz", "1", "GenuineIntel", "Intel(R) Core(TM) i7-4770HQ CPU @ 2.20GHz"], "ansible_processor_count": 2, "ansible_processor_cores": 1, "ansible_processor_threads_per_core": 1, "ansible_processor_vcpus": 2, "ansible_processor_nproc": 2, "ansible_memtotal_mb": 1746, "ansible_memfree_mb": 519, "ansible_swaptotal_mb": 2067, "ansible_swapfree_mb": 2067, "ansible_memory_mb": {"real": {"total": 1746, "used": 1227, "free": 519}, "nocache": {"free": 1317, "used": 429}, "swap": {"total": 2067, "free": 2067, "used": 0, "cached": 0}}, "ansible_bios_date": "11/12/2020", "ansible_bios_vendor": "Phoenix Technologies LTD", "ansible_bios_version": "6.00", "ansible_board_asset_tag": "NA", "ansible_board_name": "440BX Desktop Reference Platform", "ansible_board_serial": "None", "ansible_board_vendor": "Intel Corporation", "ansible_board_version": "None", "ansible_chassis_asset_tag": "No Asset Tag", "ansible_chassis_serial": "None", "ansible_chassis_vendor": "No Enclosure", "ansible_chassis_version": "N/A", "ansible_form_factor": "Other", "ansible_product_name": "VMware Virtual Platform", "ansible_product_serial": "VMware-56 4d 66 1c eb e4 13 46-da cf 23 2e 34 f8 26 70", "ansible_product_uuid": "1c664d56-e4eb-4613-dacf-232e34f82670", "ansible_product_version": "None", "ansible_system_vendor": "VMware, Inc.", "ansible_devices": {"dm-1": {"virtual": 1, "links": {"ids": ["dm-name-rl_kafka-swap", "dm-uuid-LVM-FcEMaw3u0FXxdrJK9MSZ0eZ9nD0MbCla54aSRBNvmH2LKynFoNYpGsSLKXIVAcWE"], "uuids": ["9d8a4fea-2651-426a-bbc5-90653071aa9f"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "4235264", "sectorsize": "512", "size": "2.02 GB", "host": "", "holders": []}, "nvme0n1": {"virtual": 1, "links": {"ids": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000", "nvme-eui.42dfd0f53ed35517000c296303385ab6"], "uuids": [], "labels": [], "masters": []}, "vendor": null, "model": "VMware Virtual NVMe Disk", "sas_address": null, "sas_device_handle": null, "serial": "VMware", "removable": "0", "support_discard": "0", "partitions": {"nvme0n1p1": {"links": {"ids": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part1", "nvme-eui.42dfd0f53ed35517000c296303385ab6-part1", "wwn-eui.42dfd0f53ed35517000c296303385ab6-part1"], "uuids": ["8e84bb10-8c4d-44cb-bcdc-17d7835f0cc0"], "labels": [], "masters": []}, "start": "2048", "sectors": "2097152", "sectorsize": 512, "size": "1.00 GB", "uuid": "8e84bb10-8c4d-44cb-bcdc-17d7835f0cc0", "holders": []}, "nvme0n1p2": {"links": {"ids": ["lvm-pv-uuid-n3o7CX-eOiP-Eqfb-l8pI-I1hN-mSx9-me7Pma", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part2", "nvme-eui.42dfd0f53ed35517000c296303385ab6-part2", "wwn-eui.42dfd0f53ed35517000c296303385ab6-part2"], "uuids": [], "labels": [], "masters": ["dm-0", "dm-1"]}, "start": "2099200", "sectors": "81786880", "sectorsize": 512, "size": "39.00 GB", "uuid": null, "holders": ["rl_kafka-swap", "rl_kafka-root"]}}, "rotational": "0", "scheduler_mode": "none", "sectors": "83886080", "sectorsize": "512", "size": "40.00 GB", "host": "", "holders": []}, "sr0": {"virtual": 1, "links": {"ids": ["ata-VMware_Virtual_SATA_CDRW_Drive_01000000000000000001"], "uuids": [], "labels": [], "masters": []}, "vendor": "NECVMWar", "model": "VMware SATA CD01", "sas_address": null, "sas_device_handle": null, "removable": "1", "support_discard": "0", "partitions": {}, "rotational": "1", "scheduler_mode": "mq-deadline", "sectors": "2097151", "sectorsize": "512", "size": "1024.00 MB", "host": "", "holders": []}, "dm-0": {"virtual": 1, "links": {"ids": ["dm-name-rl_kafka-root", "dm-uuid-LVM-FcEMaw3u0FXxdrJK9MSZ0eZ9nD0MbClageiH5U12Lr7QiOm5zHpmKRnMdcdf33nZ"], "uuids": ["92c33732-32a5-446a-a9d8-c37a6107ba25"], "labels": [], "masters": []}, "vendor": null, "model": null, "sas_address": null, "sas_device_handle": null, "removable": "0", "support_discard": "0", "partitions": {}, "rotational": "0", "scheduler_mode": "", "sectors": "77545472", "sectorsize": "512", "size": "36.98 GB", "host": "", "holders": []}}, "ansible_device_links": {"ids": {"nvme0n1p1": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part1", "nvme-eui.42dfd0f53ed35517000c296303385ab6-part1", "wwn-eui.42dfd0f53ed35517000c296303385ab6-part1"], "nvme0n1p2": ["lvm-pv-uuid-n3o7CX-eOiP-Eqfb-l8pI-I1hN-mSx9-me7Pma", "nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000-part2", "nvme-eui.42dfd0f53ed35517000c296303385ab6-part2", "wwn-eui.42dfd0f53ed35517000c296303385ab6-part2"], "dm-1": ["dm-name-rl_kafka-swap", "dm-uuid-LVM-FcEMaw3u0FXxdrJK9MSZ0eZ9nD0MbCla54aSRBNvmH2LKynFoNYpGsSLKXIVAcWE"], "dm-0": ["dm-name-rl_kafka-root", "dm-uuid-LVM-FcEMaw3u0FXxdrJK9MSZ0eZ9nD0MbClageiH5U12Lr7QiOm5zHpmKRnMdcdf33nZ"], "sr0": ["ata-VMware_Virtual_SATA_CDRW_Drive_01000000000000000001"], "nvme0n1": ["nvme-VMware_Virtual_NVMe_Disk_VMware_NVME_0000", "nvme-eui.42dfd0f53ed35517000c296303385ab6"]}, "uuids": {"dm-1": ["9d8a4fea-2651-426a-bbc5-90653071aa9f"], "dm-0": ["92c33732-32a5-446a-a9d8-c37a6107ba25"], "nvme0n1p1": ["8e84bb10-8c4d-44cb-bcdc-17d7835f0cc0"]}, "labels": {}, "masters": {"nvme0n1p2": ["dm-0", "dm-1"]}}, "ansible_uptime_seconds": 18564, "ansible_lvm": {"lvs": {"root": {"size_g": "36.98", "vg": "rl_kafka"}, "swap": {"size_g": "2.02", "vg": "rl_kafka"}}, "vgs": {"rl_kafka": {"size_g": "39.00", "free_g": "0", "num_lvs": "2", "num_pvs": "1"}}, "pvs": {"/dev/nvme0n1p2": {"size_g": "39.00", "free_g": "0", "vg": "rl_kafka"}}}, "ansible_mounts": [{"mount": "/", "device": "/dev/mapper/rl_kafka-root", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 39683895296, "size_available": 36748611584, "block_size": 4096, "block_total": 9688451, "block_available": 8971829, "block_used": 716622, "inode_total": 19386368, "inode_available": 19341506, "inode_used": 44862, "uuid": "92c33732-32a5-446a-a9d8-c37a6107ba25"}, {"mount": "/boot", "device": "/dev/nvme0n1p1", "fstype": "xfs", "options": "rw,seclabel,relatime,attr2,inode64,logbufs=8,logbsize=32k,noquota", "size_total": 1063256064, "size_available": 855318528, "block_size": 4096, "block_total": 259584, "block_available": 208818, "block_used": 50766, "inode_total": 524288, "inode_available": 523978, "inode_used": 310, "uuid": "8e84bb10-8c4d-44cb-bcdc-17d7835f0cc0"}], "ansible_python": {"version": {"major": 3, "minor": 6, "micro": 8, "releaselevel": "final", "serial": 0}, "version_info": [3, 6, 8, "final", 0], "executable": "/usr/libexec/platform-python", "has_sslcontext": true, "type": "cpython"}, "ansible_dns": {"search": ["localdomain"], "nameservers": ["172.16.131.2"]}, "ansible_cmdline": {"BOOT_IMAGE": "(hd0,msdos1)/vmlinuz-4.18.0-553.el8_10.x86_64", "root": "/dev/mapper/rl_kafka-root", "ro": true, "crashkernel": "auto", "resume": "/dev/mapper/rl_kafka-swap", "rd.lvm.lv": "rl_kafka/swap"}, "ansible_proc_cmdline": {"BOOT_IMAGE": "(hd0,msdos1)/vmlinuz-4.18.0-553.el8_10.x86_64", "root": "/dev/mapper/rl_kafka-root", "ro": true, "crashkernel": "auto", "resume": "/dev/mapper/rl_kafka-swap", "rd.lvm.lv": ["rl_kafka/root", "rl_kafka/swap"]}, "ansible_fips": false, "ansible_hostnqn": "", "ansible_date_time": {"year": "2024", "month": "10", "weekday": "Monday", "weekday_number": "1", "weeknumber": "44", "day": "28", "hour": "08", "minute": "23", "second": "36", "epoch": "1730118216", "epoch_int": "1730118216", "date": "2024-10-28", "time": "08:23:36", "iso8601_micro": "2024-10-28T12:23:36.877116Z", "iso8601": "2024-10-28T12:23:36Z", "iso8601_basic": "20241028T082336877116", "iso8601_basic_short": "20241028T082336", "tz": "EDT", "tz_dst": "EDT", "tz_offset": "-0400"}, "ansible_interfaces": ["lo", "ens160"], "ansible_lo": {"device": "lo", "mtu": 65536, "active": true, "type": "loopback", "promisc": false, "ipv4": {"address": "127.0.0.1", "broadcast": "", "netmask": "255.0.0.0", "network": "127.0.0.0", "prefix": "8"}, "ipv6": [{"address": "::1", "prefix": "128", "scope": "host"}], "features": {"rx_checksumming": "on [fixed]", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on [fixed]", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "on [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on [fixed]", "tx_scatter_gather_fraglist": "on [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "on", "tx_tcp_mangleid_segmentation": "on", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "off [fixed]", "rx_vlan_offload": "off [fixed]", "tx_vlan_offload": "off [fixed]", "ntuple_filters": "off [fixed]", "receive_hashing": "off [fixed]", "highdma": "on [fixed]", "rx_vlan_filter": "off [fixed]", "vlan_challenged": "on [fixed]", "tx_lockless": "on [fixed]", "netns_local": "on [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "on", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "on", "tx_gso_list": "on", "rx_udp_gro_forwarding": "off", "rx_gro_list": "off", "tls_hw_rx_offload": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off [fixed]", "loopback": "on [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_ens160": {"device": "ens160", "macaddress": "00:0c:29:f8:26:70", "mtu": 1500, "active": true, "module": "vmxnet3", "type": "ether", "pciid": "0000:03:00.0", "speed": 10000, "promisc": false, "ipv4": {"address": "172.16.131.179", "broadcast": "172.16.131.255", "netmask": "255.255.255.0", "network": "172.16.131.0", "prefix": "24"}, "ipv6": [{"address": "fe80::20c:29ff:fef8:2670", "prefix": "64", "scope": "link"}], "features": {"rx_checksumming": "on", "tx_checksumming": "on", "tx_checksum_ipv4": "off [fixed]", "tx_checksum_ip_generic": "on", "tx_checksum_ipv6": "off [fixed]", "tx_checksum_fcoe_crc": "off [fixed]", "tx_checksum_sctp": "off [fixed]", "scatter_gather": "on", "tx_scatter_gather": "on", "tx_scatter_gather_fraglist": "off [fixed]", "tcp_segmentation_offload": "on", "tx_tcp_segmentation": "on", "tx_tcp_ecn_segmentation": "off [fixed]", "tx_tcp_mangleid_segmentation": "off", "tx_tcp6_segmentation": "on", "generic_segmentation_offload": "on", "generic_receive_offload": "on", "large_receive_offload": "on", "rx_vlan_offload": "on", "tx_vlan_offload": "on", "ntuple_filters": "off [fixed]", "receive_hashing": "on", "highdma": "on", "rx_vlan_filter": "on [fixed]", "vlan_challenged": "off [fixed]", "tx_lockless": "off [fixed]", "netns_local": "off [fixed]", "tx_gso_robust": "off [fixed]", "tx_fcoe_segmentation": "off [fixed]", "tx_gre_segmentation": "off [fixed]", "tx_gre_csum_segmentation": "off [fixed]", "tx_ipxip4_segmentation": "off [fixed]", "tx_ipxip6_segmentation": "off [fixed]", "tx_udp_tnl_segmentation": "off [fixed]", "tx_udp_tnl_csum_segmentation": "off [fixed]", "tx_gso_partial": "off [fixed]", "tx_tunnel_remcsum_segmentation": "off [fixed]", "tx_sctp_segmentation": "off [fixed]", "tx_esp_segmentation": "off [fixed]", "tx_udp_segmentation": "off [fixed]", "tx_gso_list": "off [fixed]", "rx_udp_gro_forwarding": "off", "rx_gro_list": "off", "tls_hw_rx_offload": "off [fixed]", "fcoe_mtu": "off [fixed]", "tx_nocache_copy": "off", "loopback": "off [fixed]", "rx_fcs": "off [fixed]", "rx_all": "off [fixed]", "tx_vlan_stag_hw_insert": "off [fixed]", "rx_vlan_stag_hw_parse": "off [fixed]", "rx_vlan_stag_filter": "off [fixed]", "l2_fwd_offload": "off [fixed]", "hw_tc_offload": "off [fixed]", "esp_hw_offload": "off [fixed]", "esp_tx_csum_hw_offload": "off [fixed]", "rx_udp_tunnel_port_offload": "off [fixed]", "tls_hw_tx_offload": "off [fixed]", "rx_gro_hw": "off [fixed]", "tls_hw_record": "off [fixed]"}, "timestamping": [], "hw_timestamp_filters": []}, "ansible_default_ipv4": {"gateway": "172.16.131.2", "interface": "ens160", "address": "172.16.131.179", "broadcast": "172.16.131.255", "netmask": "255.255.255.0", "network": "172.16.131.0", "prefix": "24", "macaddress": "00:0c:29:f8:26:70", "mtu": 1500, "type": "ether", "alias": "ens160"}, "ansible_default_ipv6": {}, "ansible_all_ipv4_addresses": ["172.16.131.179"], "ansible_all_ipv6_addresses": ["fe80::20c:29ff:fef8:2670"], "ansible_service_mgr": "systemd", "ansible_pkg_mgr": "dnf", "gather_subset": ["all"], "module_setup": true}, "invocation": {"module_args": {"gather_subset": ["all"], "gather_timeout": 10, "filter": [], "fact_path": "/etc/ansible/facts.d"}}}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:40:54,263 p=7791 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:54,266 p=7791 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119215.6127481-7791-120830928004767/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:40:54,318 p=7791 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:54,341 p=7784 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:40:54,343 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:40:54,375 p=7953 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:54,377 p=7953 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:40:54,423 p=7953 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:40:54,424 p=7953 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:54,426 p=7953 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650 `" && echo ansible-tmp-1730119254.424381-7953-185689755015650="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650 `" ) && sleep 0'"'"''
+2024-10-28 13:40:54,473 p=7953 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119254.424381-7953-185689755015650=/home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650\n', b'')
+2024-10-28 13:40:54,829 p=7953 u=tonsmink n=ansible | Using module file /Users/tonsmink/.ansible/collections/ansible_collections/ansible/posix/plugins/modules/selinux.py
+2024-10-28 13:40:54,830 p=7953 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpg4lup4vg TO /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650/AnsiballZ_selinux.py
+2024-10-28 13:40:54,831 p=7953 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:40:54,898 p=7953 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpg4lup4vg /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650/AnsiballZ_selinux.py\n', b'')
+2024-10-28 13:40:54,899 p=7953 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:54,900 p=7953 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650/ /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650/AnsiballZ_selinux.py && sleep 0'"'"''
+2024-10-28 13:40:54,947 p=7953 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:54,950 p=7953 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:54,951 p=7953 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=rptoooioqnmsmocanvmcftrgluxwppqc] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rptoooioqnmsmocanvmcftrgluxwppqc ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650/AnsiballZ_selinux.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:40:55,033 p=7953 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:40:55,346 p=7953 u=tonsmink n=ansible | <172.16.131.179> (0, b'\r\n\r\n{"changed": false, "msg": "", "configfile": "/etc/selinux/config", "policy": "targeted", "state": "disabled", "reboot_required": true, "invocation": {"module_args": {"state": "disabled", "configfile": "/etc/selinux/config", "policy": null}}, "warnings": ["SELinux state change will take effect next reboot"]}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:40:55,348 p=7953 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:55,350 p=7953 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119254.424381-7953-185689755015650/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:40:55,397 p=7953 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:55,404 p=7784 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:40:55,405 p=7784 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:40:55,407 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179] => {
+    "changed": false,
+    "configfile": "/etc/selinux/config",
+    "invocation": {
+        "module_args": {
+            "configfile": "/etc/selinux/config",
+            "policy": null,
+            "state": "disabled"
+        }
+    },
+    "msg": "",
+    "policy": "targeted",
+    "reboot_required": true,
+    "state": "disabled"
+}
+2024-10-28 13:40:55,447 p=7971 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:55,449 p=7971 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:40:55,495 p=7971 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:40:55,496 p=7971 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:55,498 p=7971 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942 `" && echo ansible-tmp-1730119255.496171-7971-40736619941942="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942 `" ) && sleep 0'"'"''
+2024-10-28 13:40:55,545 p=7971 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119255.496171-7971-40736619941942=/home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942\n', b'')
+2024-10-28 13:40:55,756 p=7971 u=tonsmink n=ansible | Using module file /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/modules/dnf.py
+2024-10-28 13:40:55,757 p=7971 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpe_x1k_ke TO /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942/AnsiballZ_dnf.py
+2024-10-28 13:40:55,758 p=7971 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:40:55,818 p=7971 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpe_x1k_ke /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942/AnsiballZ_dnf.py\n', b'')
+2024-10-28 13:40:55,820 p=7971 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:55,821 p=7971 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942/ /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942/AnsiballZ_dnf.py && sleep 0'"'"''
+2024-10-28 13:40:55,867 p=7971 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:55,869 p=7971 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:55,871 p=7971 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=ksnwjecnttvcwxhwldwxscvltbksoqjy] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-ksnwjecnttvcwxhwldwxscvltbksoqjy ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942/AnsiballZ_dnf.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:40:55,952 p=7971 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:40:57,093 p=7971 u=tonsmink n=ansible | <172.16.131.179> (0, b'\r\n\r\n{"msg": "Nothing to do", "changed": false, "results": [], "rc": 0, "invocation": {"module_args": {"name": ["java-11-openjdk"], "state": "latest", "allow_downgrade": false, "autoremove": false, "bugfix": false, "cacheonly": false, "disable_gpg_check": false, "disable_plugin": [], "disablerepo": [], "download_only": false, "enable_plugin": [], "enablerepo": [], "exclude": [], "installroot": "/", "install_repoquery": true, "install_weak_deps": true, "security": false, "skip_broken": false, "update_cache": false, "update_only": false, "validate_certs": true, "sslverify": true, "lock_timeout": 30, "allowerasing": false, "nobest": false, "conf_file": null, "disable_excludes": null, "download_dir": null, "list": null, "releasever": null}}}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:40:57,095 p=7971 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:57,097 p=7971 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119255.496171-7971-40736619941942/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:40:57,145 p=7971 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:57,151 p=7784 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:40:57,153 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "allow_downgrade": false,
+            "allowerasing": false,
+            "autoremove": false,
+            "bugfix": false,
+            "cacheonly": false,
+            "conf_file": null,
+            "disable_excludes": null,
+            "disable_gpg_check": false,
+            "disable_plugin": [],
+            "disablerepo": [],
+            "download_dir": null,
+            "download_only": false,
+            "enable_plugin": [],
+            "enablerepo": [],
+            "exclude": [],
+            "install_repoquery": true,
+            "install_weak_deps": true,
+            "installroot": "/",
+            "list": null,
+            "lock_timeout": 30,
+            "name": [
+                "java-11-openjdk"
+            ],
+            "nobest": false,
+            "releasever": null,
+            "security": false,
+            "skip_broken": false,
+            "sslverify": true,
+            "state": "latest",
+            "update_cache": false,
+            "update_only": false,
+            "validate_certs": true
+        }
+    },
+    "msg": "Nothing to do",
+    "rc": 0,
+    "results": []
+}
+2024-10-28 13:40:57,167 p=7784 u=tonsmink n=ansible | META: ran handlers
+2024-10-28 13:40:57,210 p=7784 u=tonsmink n=ansible | TASK [kafka : Load OS-specific variables] *********************************************************************************************************************************************************
+2024-10-28 13:40:57,211 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/vars/../vars/RedHat.yml) => {
+    "ansible_facts": {
+        "kafka_unit_path": "/usr/lib/systemd/system/kafka.service"
+    },
+    "ansible_included_var_files": [
+        "/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/vars/RedHat.yml"
+    ],
+    "ansible_loop_var": "item",
+    "changed": false,
+    "item": "/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/vars/../vars/RedHat.yml"
+}
+2024-10-28 13:40:57,245 p=7784 u=tonsmink n=ansible | TASK [kafka : Install kafka] **********************************************************************************************************************************************************************
+2024-10-28 13:40:57,353 p=7784 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/tasks/install.yml for 172.16.131.179
+2024-10-28 13:40:57,650 p=7989 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:57,652 p=7989 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:40:57,693 p=7989 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:40:57,694 p=7989 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:57,695 p=7989 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558 `" && echo ansible-tmp-1730119257.694187-7989-9177337882558="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558 `" ) && sleep 0'"'"''
+2024-10-28 13:40:57,743 p=7989 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119257.694187-7989-9177337882558=/home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558\n', b'')
+2024-10-28 13:40:57,914 p=7989 u=tonsmink n=ansible | Using module file /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/modules/group.py
+2024-10-28 13:40:57,915 p=7989 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpye2sm0zz TO /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558/AnsiballZ_group.py
+2024-10-28 13:40:57,916 p=7989 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:40:57,974 p=7989 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpye2sm0zz /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558/AnsiballZ_group.py\n', b'')
+2024-10-28 13:40:57,976 p=7989 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:57,977 p=7989 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558/ /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558/AnsiballZ_group.py && sleep 0'"'"''
+2024-10-28 13:40:58,023 p=7989 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:58,025 p=7989 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:58,026 p=7989 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=riexzmjfzcbfxrahphgxzmoehtjmyvrv] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-riexzmjfzcbfxrahphgxzmoehtjmyvrv ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558/AnsiballZ_group.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:40:58,107 p=7989 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:40:58,288 p=7989 u=tonsmink n=ansible | <172.16.131.179> (0, b'\r\n\r\n{"name": "kafka", "state": "present", "changed": false, "system": false, "gid": 1002, "invocation": {"module_args": {"name": "kafka", "state": "present", "system": false, "local": false, "non_unique": false, "gid": null}}}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:40:58,290 p=7989 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:58,292 p=7989 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119257.694187-7989-9177337882558/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:40:58,344 p=7989 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:58,350 p=7784 u=tonsmink n=ansible | TASK [kafka : Create kafka group] *****************************************************************************************************************************************************************
+2024-10-28 13:40:58,352 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179] => {
+    "changed": false,
+    "gid": 1002,
+    "invocation": {
+        "module_args": {
+            "gid": null,
+            "local": false,
+            "name": "kafka",
+            "non_unique": false,
+            "state": "present",
+            "system": false
+        }
+    },
+    "name": "kafka",
+    "state": "present",
+    "system": false
+}
+2024-10-28 13:40:58,564 p=7997 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:58,565 p=7997 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:40:58,612 p=7997 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:40:58,613 p=7997 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:58,615 p=7997 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307 `" && echo ansible-tmp-1730119258.613649-7997-77487949327307="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307 `" ) && sleep 0'"'"''
+2024-10-28 13:40:58,662 p=7997 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119258.613649-7997-77487949327307=/home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307\n', b'')
+2024-10-28 13:40:58,877 p=7997 u=tonsmink n=ansible | Using module file /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/modules/user.py
+2024-10-28 13:40:58,878 p=7997 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpt484g7bi TO /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307/AnsiballZ_user.py
+2024-10-28 13:40:58,879 p=7997 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:40:58,940 p=7997 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpt484g7bi /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307/AnsiballZ_user.py\n', b'')
+2024-10-28 13:40:58,941 p=7997 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:58,943 p=7997 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307/ /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307/AnsiballZ_user.py && sleep 0'"'"''
+2024-10-28 13:40:58,987 p=7997 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:58,989 p=7997 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:58,990 p=7997 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=strxaqihijsyqnsrvtwiswpeiyprbhlp] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-strxaqihijsyqnsrvtwiswpeiyprbhlp ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307/AnsiballZ_user.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:40:59,075 p=7997 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:40:59,290 p=7997 u=tonsmink n=ansible | <172.16.131.179> (0, b'\r\n\r\n{"name": "kafka", "state": "present", "append": false, "move_home": false, "changed": false, "uid": 1002, "group": 1002, "comment": "", "home": "/home/kafka", "shell": "/bin/bash", "invocation": {"module_args": {"name": "kafka", "group": "kafka", "state": "present", "createhome": false, "create_home": false, "non_unique": false, "force": false, "remove": false, "system": false, "move_home": false, "append": false, "ssh_key_bits": 0, "ssh_key_type": "rsa", "ssh_key_comment": "ansible-generated on kafka", "update_password": "always", "uid": null, "groups": null, "comment": null, "home": null, "shell": null, "password": null, "login_class": null, "password_expire_max": null, "password_expire_min": null, "hidden": null, "seuser": null, "skeleton": null, "generate_ssh_key": null, "ssh_key_file": null, "ssh_key_passphrase": null, "expires": null, "password_lock": null, "local": null, "profile": null, "authorization": null, "role": null, "umask": null}}}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:40:59,292 p=7997 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:59,293 p=7997 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119258.613649-7997-77487949327307/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:40:59,344 p=7997 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:59,350 p=7784 u=tonsmink n=ansible | TASK [kafka : Create kafka user] ******************************************************************************************************************************************************************
+2024-10-28 13:40:59,352 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179] => {
+    "append": false,
+    "changed": false,
+    "comment": "",
+    "group": 1002,
+    "home": "/home/kafka",
+    "invocation": {
+        "module_args": {
+            "append": false,
+            "authorization": null,
+            "comment": null,
+            "create_home": false,
+            "createhome": false,
+            "expires": null,
+            "force": false,
+            "generate_ssh_key": null,
+            "group": "kafka",
+            "groups": null,
+            "hidden": null,
+            "home": null,
+            "local": null,
+            "login_class": null,
+            "move_home": false,
+            "name": "kafka",
+            "non_unique": false,
+            "password": null,
+            "password_expire_max": null,
+            "password_expire_min": null,
+            "password_lock": null,
+            "profile": null,
+            "remove": false,
+            "role": null,
+            "seuser": null,
+            "shell": null,
+            "skeleton": null,
+            "ssh_key_bits": 0,
+            "ssh_key_comment": "ansible-generated on kafka",
+            "ssh_key_file": null,
+            "ssh_key_passphrase": null,
+            "ssh_key_type": "rsa",
+            "state": "present",
+            "system": false,
+            "uid": null,
+            "umask": null,
+            "update_password": "always"
+        }
+    },
+    "move_home": false,
+    "name": "kafka",
+    "shell": "/bin/bash",
+    "state": "present",
+    "uid": 1002
+}
+2024-10-28 13:40:59,391 p=8013 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:59,392 p=8013 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:40:59,441 p=8013 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:40:59,443 p=8013 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:59,444 p=8013 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995 `" && echo ansible-tmp-1730119259.442775-8013-130780337215995="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995 `" ) && sleep 0'"'"''
+2024-10-28 13:40:59,497 p=8013 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119259.442775-8013-130780337215995=/home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995\n', b'')
+2024-10-28 13:40:59,667 p=8013 u=tonsmink n=ansible | Using module file /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/modules/stat.py
+2024-10-28 13:40:59,668 p=8013 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpwewxw_74 TO /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995/AnsiballZ_stat.py
+2024-10-28 13:40:59,669 p=8013 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:40:59,729 p=8013 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpwewxw_74 /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995/AnsiballZ_stat.py\n', b'')
+2024-10-28 13:40:59,730 p=8013 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:59,732 p=8013 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995/ /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995/AnsiballZ_stat.py && sleep 0'"'"''
+2024-10-28 13:40:59,776 p=8013 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:40:59,779 p=8013 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:40:59,780 p=8013 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=rtlsonzanytgprlzwwmoyfqjpgtajegn] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-rtlsonzanytgprlzwwmoyfqjpgtajegn ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995/AnsiballZ_stat.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:40:59,863 p=8013 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:41:00,036 p=8013 u=tonsmink n=ansible | <172.16.131.179> (0, b'\r\n\r\n{"changed": false, "stat": {"exists": false}, "invocation": {"module_args": {"path": "/opt/kafka_2.13-3.6.2", "follow": false, "get_md5": false, "get_checksum": true, "get_mime": true, "get_attributes": true, "checksum_algorithm": "sha1"}}}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:41:00,038 p=8013 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:41:00,039 p=8013 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119259.442775-8013-130780337215995/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:41:00,085 p=8013 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:41:00,091 p=7784 u=tonsmink n=ansible | TASK [kafka : Check if Kafka has already been downloaded and unpacked] ****************************************************************************************************************************
+2024-10-28 13:41:00,093 p=7784 u=tonsmink n=ansible | ok: [172.16.131.179] => {
+    "changed": false,
+    "invocation": {
+        "module_args": {
+            "checksum_algorithm": "sha1",
+            "follow": false,
+            "get_attributes": true,
+            "get_checksum": true,
+            "get_md5": false,
+            "get_mime": true,
+            "path": "/opt/kafka_2.13-3.6.2"
+        }
+    },
+    "stat": {
+        "exists": false
+    }
+}
+2024-10-28 13:41:00,132 p=8021 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:41:00,133 p=8021 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'echo ~maintain && sleep 0'"'"''
+2024-10-28 13:41:00,179 p=8021 u=tonsmink n=ansible | <172.16.131.179> (0, b'/home/maintain\n', b'')
+2024-10-28 13:41:00,181 p=8021 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:41:00,182 p=8021 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'( umask 77 && mkdir -p "` echo /home/maintain/.ansible/tmp `"&& mkdir "` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903 `" && echo ansible-tmp-1730119260.181016-8021-207758892119903="` echo /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903 `" ) && sleep 0'"'"''
+2024-10-28 13:41:00,235 p=8021 u=tonsmink n=ansible | <172.16.131.179> (0, b'ansible-tmp-1730119260.181016-8021-207758892119903=/home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903\n', b'')
+2024-10-28 13:41:00,434 p=8021 u=tonsmink n=ansible | Using module file /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/modules/get_url.py
+2024-10-28 13:41:00,435 p=8021 u=tonsmink n=ansible | <172.16.131.179> PUT /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpcx3ilaz0 TO /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903/AnsiballZ_get_url.py
+2024-10-28 13:41:00,436 p=8021 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC sftp -b - -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' '[172.16.131.179]'
+2024-10-28 13:41:00,498 p=8021 u=tonsmink n=ansible | <172.16.131.179> (0, b'sftp> put /Users/tonsmink/.ansible/tmp/ansible-local-77846_9g84ih/tmpcx3ilaz0 /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903/AnsiballZ_get_url.py\n', b'')
+2024-10-28 13:41:00,499 p=8021 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:41:00,501 p=8021 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'chmod u+x /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903/ /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903/AnsiballZ_get_url.py && sleep 0'"'"''
+2024-10-28 13:41:00,548 p=8021 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:41:00,551 p=8021 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:41:00,553 p=8021 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' -tt 172.16.131.179 '/bin/sh -c '"'"'sudo -H -S -p "[sudo via ansible, key=qptfwxrsgtvzndrdyuapnqdnhncbbxyd] password:" -u root /bin/sh -c '"'"'"'"'"'"'"'"'echo BECOME-SUCCESS-qptfwxrsgtvzndrdyuapnqdnhncbbxyd ; /usr/libexec/platform-python /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903/AnsiballZ_get_url.py'"'"'"'"'"'"'"'"' && sleep 0'"'"''
+2024-10-28 13:41:00,636 p=8021 u=tonsmink n=ansible | Escalation succeeded
+2024-10-28 13:41:24,934 p=8021 u=tonsmink n=ansible | <172.16.131.179> (1, b'\r\n\r\n{"url": "http://www-eu.apache.org/dist/kafka/3.6.2/kafka_2.13-3.6.2.tgz", "dest": "/tmp", "elapsed": 26, "failed": true, "msg": "Request failed: <urlopen error [Errno -2] Name or service not known>", "uid": 0, "gid": 0, "owner": "root", "group": "root", "mode": "01777", "state": "directory", "secontext": "system_u:object_r:tmp_t:s0", "size": 4096, "invocation": {"module_args": {"url": "http://www-eu.apache.org/dist/kafka/3.6.2/kafka_2.13-3.6.2.tgz", "dest": "/tmp", "force": false, "http_agent": "ansible-httpget", "use_proxy": true, "validate_certs": true, "force_basic_auth": false, "use_gssapi": false, "backup": false, "sha256sum": "", "checksum": "", "timeout": 10, "unredirected_headers": [], "unsafe_writes": false, "url_username": null, "url_password": null, "client_cert": null, "client_key": null, "headers": null, "tmp_dest": null, "mode": null, "owner": null, "group": null, "seuser": null, "serole": null, "selevel": null, "setype": null, "attributes": null}}}\r\n', b'Shared connection to 172.16.131.179 closed.\r\n')
+2024-10-28 13:41:24,935 p=8021 u=tonsmink n=ansible | <172.16.131.179> Failed to connect to the host via ssh: Shared connection to 172.16.131.179 closed.
+2024-10-28 13:41:24,937 p=8021 u=tonsmink n=ansible | <172.16.131.179> ESTABLISH SSH CONNECTION FOR USER: maintain
+2024-10-28 13:41:24,938 p=8021 u=tonsmink n=ansible | <172.16.131.179> SSH: EXEC ssh -C -o ControlMaster=auto -o ControlPersist=60s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o 'User="maintain"' -o ConnectTimeout=10 -o 'ControlPath="/Users/tonsmink/.ansible/cp/157a4f006b"' 172.16.131.179 '/bin/sh -c '"'"'rm -f -r /home/maintain/.ansible/tmp/ansible-tmp-1730119260.181016-8021-207758892119903/ > /dev/null 2>&1 && sleep 0'"'"''
+2024-10-28 13:41:24,990 p=8021 u=tonsmink n=ansible | <172.16.131.179> (0, b'', b'')
+2024-10-28 13:41:24,998 p=7784 u=tonsmink n=ansible | TASK [kafka : Download Apache Kafka] **************************************************************************************************************************************************************
+2024-10-28 13:41:25,000 p=7784 u=tonsmink n=ansible | fatal: [172.16.131.179]: FAILED! => {
+    "changed": false,
+    "dest": "/tmp",
+    "elapsed": 26,
+    "gid": 0,
+    "group": "root",
+    "invocation": {
+        "module_args": {
+            "attributes": null,
+            "backup": false,
+            "checksum": "",
+            "client_cert": null,
+            "client_key": null,
+            "dest": "/tmp",
+            "force": false,
+            "force_basic_auth": false,
+            "group": null,
+            "headers": null,
+            "http_agent": "ansible-httpget",
+            "mode": null,
+            "owner": null,
+            "selevel": null,
+            "serole": null,
+            "setype": null,
+            "seuser": null,
+            "sha256sum": "",
+            "timeout": 10,
+            "tmp_dest": null,
+            "unredirected_headers": [],
+            "unsafe_writes": false,
+            "url": "http://www-eu.apache.org/dist/kafka/3.6.2/kafka_2.13-3.6.2.tgz",
+            "url_password": null,
+            "url_username": null,
+            "use_gssapi": false,
+            "use_proxy": true,
+            "validate_certs": true
+        }
+    },
+    "mode": "01777",
+    "msg": "Request failed: <urlopen error [Errno -2] Name or service not known>",
+    "owner": "root",
+    "secontext": "system_u:object_r:tmp_t:s0",
+    "size": 4096,
+    "state": "directory",
+    "uid": 0,
+    "url": "http://www-eu.apache.org/dist/kafka/3.6.2/kafka_2.13-3.6.2.tgz"
+}
+2024-10-28 13:41:25,002 p=7784 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:41:25,002 p=7784 u=tonsmink n=ansible | 172.16.131.179             : ok=8    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-10-28 13:50:35,779 p=10276 u=tonsmink n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  could not find expected ':'
+
+The error appears to be in '/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/defaults/main.yml': line 175, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+https://downloads.apache.org/kafka/3.6.2/kafka-3.6.2-src.tgz
+^ here
+
+2024-10-28 13:51:15,803 p=10457 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:51:15,827 p=10457 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:51:15,828 p=10457 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:51:54,946 p=10457 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:51:54,947 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:51:56,124 p=10457 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:51:56,126 p=10457 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:51:56,126 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:51:57,783 p=10457 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:51:57,784 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:51:57,846 p=10457 u=tonsmink n=ansible | TASK [kafka : Load OS-specific variables] *********************************************************************************************************************************************************
+2024-10-28 13:51:57,847 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/vars/../vars/RedHat.yml)
+2024-10-28 13:51:57,881 p=10457 u=tonsmink n=ansible | TASK [kafka : Install kafka] **********************************************************************************************************************************************************************
+2024-10-28 13:51:57,917 p=10457 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/tasks/install.yml for 172.16.131.179
+2024-10-28 13:51:58,884 p=10457 u=tonsmink n=ansible | TASK [kafka : Create kafka group] *****************************************************************************************************************************************************************
+2024-10-28 13:51:58,885 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:51:59,847 p=10457 u=tonsmink n=ansible | TASK [kafka : Create kafka user] ******************************************************************************************************************************************************************
+2024-10-28 13:51:59,847 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:52:00,577 p=10457 u=tonsmink n=ansible | TASK [kafka : Check if Kafka has already been downloaded and unpacked] ****************************************************************************************************************************
+2024-10-28 13:52:00,578 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:52:32,862 p=10457 u=tonsmink n=ansible | TASK [kafka : Download Apache Kafka] **************************************************************************************************************************************************************
+2024-10-28 13:52:32,863 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:37,291 p=10457 u=tonsmink n=ansible | TASK [kafka : Unpack Apache Kafka] ****************************************************************************************************************************************************************
+2024-10-28 13:52:37,293 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:38,042 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka installation directory] *************************************************************************************************************************************
+2024-10-28 13:52:38,043 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:38,610 p=10457 u=tonsmink n=ansible | TASK [kafka : Create directory for kafka data log files] ******************************************************************************************************************************************
+2024-10-28 13:52:38,611 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:39,246 p=10457 u=tonsmink n=ansible | TASK [kafka : Create directory for kafka application logs] ****************************************************************************************************************************************
+2024-10-28 13:52:39,246 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:39,803 p=10457 u=tonsmink n=ansible | TASK [kafka : Register '/opt/kafka/logs' directory status] ****************************************************************************************************************************************
+2024-10-28 13:52:39,804 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:52:40,383 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to application log directory] ****************************************************************************************************************************************
+2024-10-28 13:52:40,384 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:40,949 p=10457 u=tonsmink n=ansible | TASK [kafka : Create directory for symlink to kafka configuration files] **************************************************************************************************************************
+2024-10-28 13:52:40,950 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:42,205 p=10457 u=tonsmink n=ansible | TASK [kafka : Template configuration file to server.properties] ***********************************************************************************************************************************
+2024-10-28 13:52:42,206 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:43,265 p=10457 u=tonsmink n=ansible | TASK [kafka : Template configuration file to zookeeper.properties] ********************************************************************************************************************************
+2024-10-28 13:52:43,266 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:44,334 p=10457 u=tonsmink n=ansible | TASK [kafka : Template configuration file to connect-standalone.properties] ***********************************************************************************************************************
+2024-10-28 13:52:44,335 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:45,438 p=10457 u=tonsmink n=ansible | TASK [kafka : Template configuration file to connect-distributed.properties] **********************************************************************************************************************
+2024-10-28 13:52:45,439 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:46,497 p=10457 u=tonsmink n=ansible | TASK [kafka : Template configuration file to producer.properties] *********************************************************************************************************************************
+2024-10-28 13:52:46,498 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:47,556 p=10457 u=tonsmink n=ansible | TASK [kafka : Template configuration file to consumer.properties] *********************************************************************************************************************************
+2024-10-28 13:52:47,557 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:48,121 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka server properties file] *************************************************************************************************************************************
+2024-10-28 13:52:48,122 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:48,714 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka connect standalone properties file] *************************************************************************************************************************
+2024-10-28 13:52:48,714 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:49,278 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka connect distributed properties file] ************************************************************************************************************************
+2024-10-28 13:52:49,279 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:49,853 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka producer properties file] ***********************************************************************************************************************************
+2024-10-28 13:52:49,854 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:50,414 p=10457 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka consumer properties file] ***********************************************************************************************************************************
+2024-10-28 13:52:50,415 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:51,491 p=10457 u=tonsmink n=ansible | TASK [kafka : Template kafka systemd service] *****************************************************************************************************************************************************
+2024-10-28 13:52:51,492 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:52,781 p=10457 u=tonsmink n=ansible | TASK [kafka : Install and start the kafka service] ************************************************************************************************************************************************
+2024-10-28 13:52:52,783 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:53,514 p=10457 u=tonsmink n=ansible | TASK [kafka : Delete the kafka archive file] ******************************************************************************************************************************************************
+2024-10-28 13:52:53,515 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:53,542 p=10457 u=tonsmink n=ansible | TASK [kafka : Setup firewall Kafka] ***************************************************************************************************************************************************************
+2024-10-28 13:52:53,569 p=10457 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/tasks/firewall.yml for 172.16.131.179
+2024-10-28 13:52:54,356 p=10457 u=tonsmink n=ansible | TASK [kafka : Enable service firewalld] ***********************************************************************************************************************************************************
+2024-10-28 13:52:54,356 p=10457 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:52:55,822 p=10457 u=tonsmink n=ansible | TASK [kafka : Setup firewallPort kafka] ***********************************************************************************************************************************************************
+2024-10-28 13:52:55,824 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:57,166 p=10457 u=tonsmink n=ansible | RUNNING HANDLER [kafka : Restart kafka service] ***************************************************************************************************************************************************
+2024-10-28 13:52:57,167 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:58,755 p=10457 u=tonsmink n=ansible | RUNNING HANDLER [kafka : Restart kafka systemd] ***************************************************************************************************************************************************
+2024-10-28 13:52:58,756 p=10457 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:52:58,770 p=10457 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:52:58,770 p=10457 u=tonsmink n=ansible | 172.16.131.179             : ok=35   changed=24   unreachable=0    failed=0    skipped=4    rescued=0    ignored=0   
+2024-10-28 13:53:47,269 p=11412 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name
+'codeCodes' from 'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 13:53:47,291 p=11412 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 13:53:47,292 p=11412 u=tonsmink n=ansible | PLAY [Install Kafka service] **********************************************************************************************************************************************************************
+2024-10-28 13:54:26,155 p=11412 u=tonsmink n=ansible | TASK [Gathering Facts] ****************************************************************************************************************************************************************************
+2024-10-28 13:54:26,156 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:54:27,214 p=11412 u=tonsmink n=ansible | TASK [Disable SELinux] ****************************************************************************************************************************************************************************
+2024-10-28 13:54:27,215 p=11412 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 13:54:27,215 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:54:29,328 p=11412 u=tonsmink n=ansible | TASK [Install java] *******************************************************************************************************************************************************************************
+2024-10-28 13:54:29,329 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:54:29,429 p=11412 u=tonsmink n=ansible | TASK [neo4j : Load OS-specific variables RedHat] **************************************************************************************************************************************************
+2024-10-28 13:54:29,430 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/vars/../vars/RedHat.yml)
+2024-10-28 13:54:29,464 p=11412 u=tonsmink n=ansible | TASK [neo4j : Include OS specific tasks] **********************************************************************************************************************************************************
+2024-10-28 13:54:29,517 p=11412 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/RedHat.yml for 172.16.131.179
+2024-10-28 13:54:30,234 p=11412 u=tonsmink n=ansible | TASK [neo4j : Add Neo4j Yum Repo] *****************************************************************************************************************************************************************
+2024-10-28 13:54:30,236 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:54:30,282 p=11412 u=tonsmink n=ansible | TASK [neo4j : Determine the neo4j package to install] *********************************************************************************************************************************************
+2024-10-28 13:54:30,283 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:54:30,313 p=11412 u=tonsmink n=ansible | TASK [neo4j : Install Neo4j] **********************************************************************************************************************************************************************
+2024-10-28 13:54:30,336 p=11412 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/install.yml for 172.16.131.179
+2024-10-28 13:54:30,366 p=11412 u=tonsmink n=ansible | TASK [neo4j : Include OS specific tasks] **********************************************************************************************************************************************************
+2024-10-28 13:54:30,381 p=11412 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/RedHat.yml for 172.16.131.179
+2024-10-28 13:54:30,926 p=11412 u=tonsmink n=ansible | TASK [neo4j : Add Neo4j Yum Repo] *****************************************************************************************************************************************************************
+2024-10-28 13:54:30,927 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:54:30,971 p=11412 u=tonsmink n=ansible | TASK [neo4j : Determine the neo4j package to install] *********************************************************************************************************************************************
+2024-10-28 13:54:30,972 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:55:26,808 p=11412 u=tonsmink n=ansible | TASK [neo4j : Install Neo4j neo4j-4.4.38] *********************************************************************************************************************************************************
+2024-10-28 13:55:26,809 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:27,586 p=11412 u=tonsmink n=ansible | TASK [neo4j : Ensure graph DB folder exists and has the correct permissions] **********************************************************************************************************************
+2024-10-28 13:55:27,589 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:28,311 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j data directory] *******************************************************************************************************************************************************
+2024-10-28 13:55:28,312 p=11412 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 13:55:28,860 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j heap inital size] *****************************************************************************************************************************************************
+2024-10-28 13:55:28,861 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:29,427 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j heap max size] ********************************************************************************************************************************************************
+2024-10-28 13:55:29,427 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:29,980 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j pagecache size] *******************************************************************************************************************************************************
+2024-10-28 13:55:29,981 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:30,871 p=11412 u=tonsmink n=ansible | TASK [neo4j : Allow any connection to Neo4J] ******************************************************************************************************************************************************
+2024-10-28 13:55:30,872 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:31,421 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j bolt listen address] **************************************************************************************************************************************************
+2024-10-28 13:55:31,422 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:31,984 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j http listen address] **************************************************************************************************************************************************
+2024-10-28 13:55:31,985 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:32,533 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j https listen address] *************************************************************************************************************************************************
+2024-10-28 13:55:32,533 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:33,095 p=11412 u=tonsmink n=ansible | TASK [neo4j : Ensure pam_limits.so is enabled] ****************************************************************************************************************************************************
+2024-10-28 13:55:33,096 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:34,523 p=11412 u=tonsmink n=ansible | TASK [neo4j : Ensure the Neo4j service is enabled and started] ************************************************************************************************************************************
+2024-10-28 13:55:34,524 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:42,256 p=11412 u=tonsmink n=ansible | TASK [neo4j : Set Neo4j initial password] *********************************************************************************************************************************************************
+2024-10-28 13:55:42,257 p=11412 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 13:55:42,284 p=11412 u=tonsmink n=ansible | TASK [neo4j : Setup firewall Neo4j] ***************************************************************************************************************************************************************
+2024-10-28 13:55:42,300 p=11412 u=tonsmink n=ansible | fatal: [172.16.131.179]: FAILED! => {"reason": "Could not find or access '/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/firewall.yaml' on the Ansible Controller."}
+2024-10-28 13:55:42,302 p=11412 u=tonsmink n=ansible | PLAY RECAP ****************************************************************************************************************************************************************************************
+2024-10-28 13:55:42,302 p=11412 u=tonsmink n=ansible | 172.16.131.179             : ok=24   changed=13   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-10-28 18:56:10,791 p=20987 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-
+packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name 'codeCodes' from 'ansible.utils.color'
+(/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-28 18:56:10,813 p=20987 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-28 18:56:10,814 p=20987 u=tonsmink n=ansible | PLAY [Install Kafka service] ***********************************************************************************************************
+2024-10-28 18:56:36,929 p=20987 u=tonsmink n=ansible | TASK [Gathering Facts] *****************************************************************************************************************
+2024-10-28 18:56:36,930 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:38,148 p=20987 u=tonsmink n=ansible | TASK [Disable SELinux] *****************************************************************************************************************
+2024-10-28 18:56:38,150 p=20987 u=tonsmink n=ansible | [WARNING]: SELinux state change will take effect next reboot
+
+2024-10-28 18:56:38,150 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:40,893 p=20987 u=tonsmink n=ansible | TASK [Install java] ********************************************************************************************************************
+2024-10-28 18:56:40,895 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:41,011 p=20987 u=tonsmink n=ansible | TASK [neo4j : Load OS-specific variables RedHat] ***************************************************************************************
+2024-10-28 18:56:41,012 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/vars/../vars/RedHat.yml)
+2024-10-28 18:56:41,042 p=20987 u=tonsmink n=ansible | TASK [neo4j : Include OS specific tasks] ***********************************************************************************************
+2024-10-28 18:56:41,102 p=20987 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/RedHat.yml for 172.16.131.179
+2024-10-28 18:56:41,963 p=20987 u=tonsmink n=ansible | TASK [neo4j : Add Neo4j Yum Repo] ******************************************************************************************************
+2024-10-28 18:56:41,965 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:42,015 p=20987 u=tonsmink n=ansible | TASK [neo4j : Determine the neo4j package to install] **********************************************************************************
+2024-10-28 18:56:42,016 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:42,112 p=20987 u=tonsmink n=ansible | TASK [neo4j : Install Neo4j] ***********************************************************************************************************
+2024-10-28 18:56:42,141 p=20987 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/install.yml for 172.16.131.179
+2024-10-28 18:56:42,170 p=20987 u=tonsmink n=ansible | TASK [neo4j : Include OS specific tasks] ***********************************************************************************************
+2024-10-28 18:56:42,186 p=20987 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/RedHat.yml for 172.16.131.179
+2024-10-28 18:56:42,843 p=20987 u=tonsmink n=ansible | TASK [neo4j : Add Neo4j Yum Repo] ******************************************************************************************************
+2024-10-28 18:56:42,844 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:42,886 p=20987 u=tonsmink n=ansible | TASK [neo4j : Determine the neo4j package to install] **********************************************************************************
+2024-10-28 18:56:42,887 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:44,601 p=20987 u=tonsmink n=ansible | TASK [neo4j : Install Neo4j neo4j-4.4.38] **********************************************************************************************
+2024-10-28 18:56:44,602 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:45,433 p=20987 u=tonsmink n=ansible | TASK [neo4j : Ensure graph DB folder exists and has the correct permissions] ***********************************************************
+2024-10-28 18:56:45,435 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:46,251 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j data directory] ********************************************************************************************
+2024-10-28 18:56:46,252 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:46,881 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j heap inital size] ******************************************************************************************
+2024-10-28 18:56:46,882 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:47,519 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j heap max size] *********************************************************************************************
+2024-10-28 18:56:47,519 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:48,176 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j pagecache size] ********************************************************************************************
+2024-10-28 18:56:48,177 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:49,119 p=20987 u=tonsmink n=ansible | TASK [neo4j : Allow any connection to Neo4J] *******************************************************************************************
+2024-10-28 18:56:49,120 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:49,753 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j bolt listen address] ***************************************************************************************
+2024-10-28 18:56:49,754 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:50,400 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j http listen address] ***************************************************************************************
+2024-10-28 18:56:50,401 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:51,061 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j https listen address] **************************************************************************************
+2024-10-28 18:56:51,062 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:51,697 p=20987 u=tonsmink n=ansible | TASK [neo4j : Ensure pam_limits.so is enabled] *****************************************************************************************
+2024-10-28 18:56:51,698 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:56:53,008 p=20987 u=tonsmink n=ansible | TASK [neo4j : Ensure the Neo4j service is enabled and started] *************************************************************************
+2024-10-28 18:56:53,008 p=20987 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 18:57:03,757 p=20987 u=tonsmink n=ansible | TASK [neo4j : Set Neo4j initial password] **********************************************************************************************
+2024-10-28 18:57:03,758 p=20987 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 18:57:03,786 p=20987 u=tonsmink n=ansible | TASK [neo4j : Setup firewall Neo4j] ****************************************************************************************************
+2024-10-28 18:57:03,810 p=20987 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/firewall.yml for 172.16.131.179
+2024-10-28 18:57:04,649 p=20987 u=tonsmink n=ansible | TASK [neo4j : Enable service firewalld] ************************************************************************************************
+2024-10-28 18:57:04,650 p=20987 u=tonsmink n=ansible | ok: [172.16.131.179]
+2024-10-28 18:57:05,979 p=20987 u=tonsmink n=ansible | TASK [neo4j : Setup firewallPort neo4j http] *******************************************************************************************
+2024-10-28 18:57:05,979 p=20987 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 18:57:06,912 p=20987 u=tonsmink n=ansible | TASK [neo4j : Setup firewallPort neo4j bolt] *******************************************************************************************
+2024-10-28 18:57:06,913 p=20987 u=tonsmink n=ansible | changed: [172.16.131.179]
+2024-10-28 18:57:07,030 p=20987 u=tonsmink n=ansible | PLAY RECAP *****************************************************************************************************************************
+2024-10-28 18:57:07,030 p=20987 u=tonsmink n=ansible | 172.16.131.179             : ok=28   changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
