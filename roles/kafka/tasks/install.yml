@@ -30,20 +30,11 @@
     path: "{{ kafka_dir }}_{{ kafka_scala_version }}-{{ kafka_version }}"
   register: dir
 
-- name: Copy tar file to remote host
-  ansible.builtin.copy:
-    src: "{{ kafka_source_dir }}/kafka_{{ kafka_scala_version }}-{{ kafka_version }}.tgz"
-    dest: /tmp/
-    mode: "0644"
-  when: dir.stat.exists == false
-  register: copy_tar
-  ignore_errors: true
-
 - name: Download Apache Kafka
   get_url:
     url: "{{ kafka_download_base_url }}/{{ kafka_version }}/kafka_{{ kafka_scala_version }}-{{ kafka_version }}.tgz"
     dest: /tmp
-  when: (dir.stat.exists == false) and (copy_tar.failed)
+  when: (dir.stat.exists == false)
   tags:
     - kafka_download
 

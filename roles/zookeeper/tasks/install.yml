@@ -31,20 +31,11 @@
     path: "{{ zookeeper_install_dir }}"
   register: dir
 
-- name: Copy tar file to remote host
-  ansible.builtin.copy:
-    src: "{{ zookeeper_source_dir }}/{{ zookeeper_package }}"
-    dest: /tmp/
-    mode: "0644"
-  when: dir.stat.exists == false
-  register: copy_tar
-  ignore_errors: true
-
 - name: Download Apache ZooKeeper
   get_url:
     url: "{{ zookeeper_mirror }}/zookeeper-{{ zookeeper_version }}/{{ zookeeper_package }}"
     dest: /tmp
-  when: (dir.stat.exists == false) and (copy_tar.failed)
+  when: (dir.stat.exists == false)
   tags:
     - zookeeper_download
 
