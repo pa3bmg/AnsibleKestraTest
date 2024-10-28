@@ -19,13 +19,13 @@
         action: "install"
         zookeeper_servers: "{{ groups['kafka'] }}"
 
-    - role: kafka
-      become: true
-      vars:
-        action: install
-        kafka_listener_hostname: "{{ inventory_hostname  }}"
+    #- role: kafka
+    #  become: true
+    #  vars:
+    #    action: install
+    #    kafka_listener_hostname: "{{ inventory_hostname  }}"
 
-    - role: neo4j
-      become: true
-      vars:
-        action: install
+    #- role: neo4j
+    #  become: true
+    #  vars:
+    #    action: install
