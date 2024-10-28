@@ -1,0 +1,11 @@
+2024-10-28 08:18:34,699 p=39882 u=tonsmink n=ansible | ERROR! this task 'ansible.builtin.include_tasks' has extra params, which is only allowed in the following modules: win_shell, include, win_command, script, add_host, command, import_tasks, set_fact, shell, include_role, include_tasks, raw, import_role, meta, group_by, include_vars
+
+The error appears to be in '/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/main.yml': line 15, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- name: Install Zookeeper
+  ^ here
+
