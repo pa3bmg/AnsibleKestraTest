@@ -3,6 +3,5 @@
 
 [kafka:vars]
 ansible_connection=ssh 
-ansible_ssh_user=maintain 
-ansible_ssh_pass=maintain
+ansible_ssh_user=maintain
 ansible_become_pass=maintain
