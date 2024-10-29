@@ -1,0 +1,10 @@
+---
+- name: Install Kafka service
+  hosts: kafka
+
+  roles:
+    - role: zookeeper
+      become: true
+      vars:
+        action: "install"
+        zookeeper_servers: "{{ groups['kafka'] }}"

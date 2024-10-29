@@ -1,0 +1,9 @@
+---
+- name: Install Kafka service
+  hosts: kafka
+
+  roles:
+    - role: neo4j
+      become: true
+      vars:
+        action: install

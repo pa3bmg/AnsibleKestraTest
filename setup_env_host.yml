@@ -1,0 +1,13 @@
+---
+- name: Install Kafka service
+  hosts: kafka
+
+  tasks:
+    - name: Disable SELinux
+      ansible.posix.selinux:
+        state: disabled
+
+    - name: Install java
+      yum:
+        name: java-11-openjdk
+        state: latest
