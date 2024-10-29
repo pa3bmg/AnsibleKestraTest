@@ -1,6 +1,7 @@
 ---
 - name: Install Kafka service
   hosts: kafka
+  become: true
   gather_facts: no
 
   tasks:
