@@ -1,6 +1,7 @@
 ---
 - name: Install Kafka service
   hosts: kafka
+  gather_facts: no
 
   tasks:
     - name: Disable SELinux
