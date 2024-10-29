@@ -835,3 +835,166 @@ packages/ansible/plugins/callback/selective.py) as it seems to be invalid: canno
 2024-10-28 18:57:06,913 p=20987 u=tonsmink n=ansible | changed: [172.16.131.179]
 2024-10-28 18:57:07,030 p=20987 u=tonsmink n=ansible | PLAY RECAP *****************************************************************************************************************************
 2024-10-28 18:57:07,030 p=20987 u=tonsmink n=ansible | 172.16.131.179             : ok=28   changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2024-10-29 07:51:49,509 p=65848 u=tonsmink n=ansible | [WARNING]: Skipping plugin (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-
+packages/ansible/plugins/callback/selective.py) as it seems to be invalid: cannot import name 'codeCodes' from
+'ansible.utils.color' (/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/ansible/utils/color.py)
+
+2024-10-29 07:51:49,535 p=65848 u=tonsmink n=ansible | [WARNING]: Found variable using reserved name: action
+
+2024-10-29 07:51:49,536 p=65848 u=tonsmink n=ansible | PLAY [Install Kafka service] *****************************************************************************************************
+2024-10-29 07:51:52,212 p=65848 u=tonsmink n=ansible | TASK [Gathering Facts] ***********************************************************************************************************
+2024-10-29 07:51:52,213 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:51:54,016 p=65848 u=tonsmink n=ansible | TASK [Disable SELinux] ***********************************************************************************************************
+2024-10-29 07:51:54,017 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:51:57,111 p=65848 u=tonsmink n=ansible | TASK [Install java] **************************************************************************************************************
+2024-10-29 07:51:57,111 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:51:57,171 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Load OS-specific variables] ************************************************************************************
+2024-10-29 07:51:57,174 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/vars/../vars/RedHat.yml)
+2024-10-29 07:51:57,213 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Install Zookeeper] *********************************************************************************************
+2024-10-29 07:51:57,249 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/zookeeper/tasks/install.yml for 172.16.237.138
+2024-10-29 07:51:59,472 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Install nano] **************************************************************************************************
+2024-10-29 07:51:59,472 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:01,392 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Install tar] ***************************************************************************************************
+2024-10-29 07:52:01,393 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:02,392 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper group] ****************************************************************************************
+2024-10-29 07:52:02,394 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:04,147 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper user] *****************************************************************************************
+2024-10-29 07:52:04,148 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:05,443 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Check if ZooKeeper has already been downloaded and unpacked] ***************************************************
+2024-10-29 07:52:05,444 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:06,468 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create symlink to ZooKeeper installation] **********************************************************************
+2024-10-29 07:52:06,469 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:07,009 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create directory for snapshot files and myid file] *************************************************************
+2024-10-29 07:52:07,010 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:07,593 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create directory for transaction log files] ********************************************************************
+2024-10-29 07:52:07,594 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:08,766 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create zookeeper log directory] ********************************************************************************
+2024-10-29 07:52:08,767 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:10,951 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Template configuration file to zoo.cfg] ************************************************************************
+2024-10-29 07:52:10,952 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:11,554 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create directory for symlink to ZooKeeper configuration file] **************************************************
+2024-10-29 07:52:11,555 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:12,114 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Create symlink to ZooKeeper configuration file] ****************************************************************
+2024-10-29 07:52:12,115 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:13,587 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Template myid to /var/lib/zookeeper/myid] **********************************************************************
+2024-10-29 07:52:13,587 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:15,314 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Template /etc/default] *****************************************************************************************
+2024-10-29 07:52:15,314 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:16,231 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Set maximum log rollover history] ******************************************************************************
+2024-10-29 07:52:16,232 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:17,275 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Template ZooKeeper systemd service file] ***********************************************************************
+2024-10-29 07:52:17,276 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:18,907 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Start the ZooKeeper service] ***********************************************************************************
+2024-10-29 07:52:18,908 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:19,678 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Delete /tmp/apache-zookeeper-3.7.2-bin.tar.gz file] ************************************************************
+2024-10-29 07:52:19,678 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:19,785 p=65848 u=tonsmink n=ansible | TASK [zookeeper : Set fact zookeeper_installed] **********************************************************************************
+2024-10-29 07:52:19,786 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:19,926 p=65848 u=tonsmink n=ansible | TASK [kafka : Load OS-specific variables] ****************************************************************************************
+2024-10-29 07:52:19,926 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/vars/../vars/RedHat.yml)
+2024-10-29 07:52:19,965 p=65848 u=tonsmink n=ansible | TASK [kafka : Install kafka] *****************************************************************************************************
+2024-10-29 07:52:20,005 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/tasks/install.yml for 172.16.237.138
+2024-10-29 07:52:21,099 p=65848 u=tonsmink n=ansible | TASK [kafka : Create kafka group] ************************************************************************************************
+2024-10-29 07:52:21,101 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:21,920 p=65848 u=tonsmink n=ansible | TASK [kafka : Create kafka user] *************************************************************************************************
+2024-10-29 07:52:21,922 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:22,549 p=65848 u=tonsmink n=ansible | TASK [kafka : Check if Kafka has already been downloaded and unpacked] ***********************************************************
+2024-10-29 07:52:22,550 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:23,813 p=65848 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka installation directory] ********************************************************************
+2024-10-29 07:52:23,813 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:24,893 p=65848 u=tonsmink n=ansible | TASK [kafka : Create directory for kafka data log files] *************************************************************************
+2024-10-29 07:52:24,894 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:25,871 p=65848 u=tonsmink n=ansible | TASK [kafka : Create directory for kafka application logs] ***********************************************************************
+2024-10-29 07:52:25,871 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:26,424 p=65848 u=tonsmink n=ansible | TASK [kafka : Register '/opt/kafka/logs' directory status] ***********************************************************************
+2024-10-29 07:52:26,425 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:27,041 p=65848 u=tonsmink n=ansible | TASK [kafka : Create directory for symlink to kafka configuration files] *********************************************************
+2024-10-29 07:52:27,042 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:29,442 p=65848 u=tonsmink n=ansible | TASK [kafka : Template configuration file to server.properties] ******************************************************************
+2024-10-29 07:52:29,443 p=65848 u=tonsmink n=ansible | changed: [172.16.237.138]
+2024-10-29 07:52:30,714 p=65848 u=tonsmink n=ansible | TASK [kafka : Template configuration file to zookeeper.properties] ***************************************************************
+2024-10-29 07:52:30,715 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:31,853 p=65848 u=tonsmink n=ansible | TASK [kafka : Template configuration file to connect-standalone.properties] ******************************************************
+2024-10-29 07:52:31,854 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:33,554 p=65848 u=tonsmink n=ansible | TASK [kafka : Template configuration file to connect-distributed.properties] *****************************************************
+2024-10-29 07:52:33,555 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:35,017 p=65848 u=tonsmink n=ansible | TASK [kafka : Template configuration file to producer.properties] ****************************************************************
+2024-10-29 07:52:35,017 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:35,937 p=65848 u=tonsmink n=ansible | TASK [kafka : Template configuration file to consumer.properties] ****************************************************************
+2024-10-29 07:52:35,937 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:36,491 p=65848 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka server properties file] ********************************************************************
+2024-10-29 07:52:36,492 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:37,050 p=65848 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka connect standalone properties file] ********************************************************
+2024-10-29 07:52:37,051 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:37,600 p=65848 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka connect distributed properties file] *******************************************************
+2024-10-29 07:52:37,601 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:38,179 p=65848 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka producer properties file] ******************************************************************
+2024-10-29 07:52:38,179 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:38,732 p=65848 u=tonsmink n=ansible | TASK [kafka : Create symlink to kafka consumer properties file] ******************************************************************
+2024-10-29 07:52:38,733 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:39,707 p=65848 u=tonsmink n=ansible | TASK [kafka : Template kafka systemd service] ************************************************************************************
+2024-10-29 07:52:39,707 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:40,426 p=65848 u=tonsmink n=ansible | TASK [kafka : Install and start the kafka service] *******************************************************************************
+2024-10-29 07:52:40,427 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:40,960 p=65848 u=tonsmink n=ansible | TASK [kafka : Delete the kafka archive file] *************************************************************************************
+2024-10-29 07:52:40,961 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:40,987 p=65848 u=tonsmink n=ansible | TASK [kafka : Setup firewall Kafka] **********************************************************************************************
+2024-10-29 07:52:41,013 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/kafka/tasks/firewall.yml for 172.16.237.138
+2024-10-29 07:52:41,720 p=65848 u=tonsmink n=ansible | TASK [kafka : Enable service firewalld] ******************************************************************************************
+2024-10-29 07:52:41,720 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:42,727 p=65848 u=tonsmink n=ansible | TASK [kafka : Setup firewallPort kafka] ******************************************************************************************
+2024-10-29 07:52:42,728 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:42,872 p=65848 u=tonsmink n=ansible | TASK [neo4j : Load OS-specific variables RedHat] *********************************************************************************
+2024-10-29 07:52:42,873 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138] => (item=/Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/vars/../vars/RedHat.yml)
+2024-10-29 07:52:42,903 p=65848 u=tonsmink n=ansible | TASK [neo4j : Include OS specific tasks] *****************************************************************************************
+2024-10-29 07:52:42,918 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/RedHat.yml for 172.16.237.138
+2024-10-29 07:52:43,632 p=65848 u=tonsmink n=ansible | TASK [neo4j : Add Neo4j Yum Repo] ************************************************************************************************
+2024-10-29 07:52:43,633 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:43,676 p=65848 u=tonsmink n=ansible | TASK [neo4j : Determine the neo4j package to install] ****************************************************************************
+2024-10-29 07:52:43,677 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:43,707 p=65848 u=tonsmink n=ansible | TASK [neo4j : Install Neo4j] *****************************************************************************************************
+2024-10-29 07:52:43,732 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/install.yml for 172.16.237.138
+2024-10-29 07:52:43,761 p=65848 u=tonsmink n=ansible | TASK [neo4j : Include OS specific tasks] *****************************************************************************************
+2024-10-29 07:52:43,776 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/RedHat.yml for 172.16.237.138
+2024-10-29 07:52:44,322 p=65848 u=tonsmink n=ansible | TASK [neo4j : Add Neo4j Yum Repo] ************************************************************************************************
+2024-10-29 07:52:44,322 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:44,367 p=65848 u=tonsmink n=ansible | TASK [neo4j : Determine the neo4j package to install] ****************************************************************************
+2024-10-29 07:52:44,367 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:45,871 p=65848 u=tonsmink n=ansible | TASK [neo4j : Install Neo4j neo4j-4.4.38] ****************************************************************************************
+2024-10-29 07:52:45,871 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:46,410 p=65848 u=tonsmink n=ansible | TASK [neo4j : Ensure graph DB folder exists and has the correct permissions] *****************************************************
+2024-10-29 07:52:46,411 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:47,111 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j data directory] **************************************************************************************
+2024-10-29 07:52:47,112 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:47,641 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j heap inital size] ************************************************************************************
+2024-10-29 07:52:47,642 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:48,178 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j heap max size] ***************************************************************************************
+2024-10-29 07:52:48,179 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:48,724 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j pagecache size] **************************************************************************************
+2024-10-29 07:52:48,725 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:49,475 p=65848 u=tonsmink n=ansible | TASK [neo4j : Allow any connection to Neo4J] *************************************************************************************
+2024-10-29 07:52:49,476 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:50,013 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j bolt listen address] *********************************************************************************
+2024-10-29 07:52:50,014 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:50,552 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j http listen address] *********************************************************************************
+2024-10-29 07:52:50,553 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:51,107 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set the neo4j https listen address] ********************************************************************************
+2024-10-29 07:52:51,107 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:51,637 p=65848 u=tonsmink n=ansible | TASK [neo4j : Ensure pam_limits.so is enabled] ***********************************************************************************
+2024-10-29 07:52:51,637 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:52:52,362 p=65848 u=tonsmink n=ansible | TASK [neo4j : Ensure the Neo4j service is enabled and started] *******************************************************************
+2024-10-29 07:52:52,362 p=65848 u=tonsmink n=ansible | changed: [172.16.237.138]
+2024-10-29 07:53:00,663 p=65848 u=tonsmink n=ansible | TASK [neo4j : Set Neo4j initial password] ****************************************************************************************
+2024-10-29 07:53:00,665 p=65848 u=tonsmink n=ansible | changed: [172.16.237.138]
+2024-10-29 07:53:00,694 p=65848 u=tonsmink n=ansible | TASK [neo4j : Setup firewall Neo4j] **********************************************************************************************
+2024-10-29 07:53:00,711 p=65848 u=tonsmink n=ansible | included: /Users/tonsmink/Documents/AnsibleWork/AnsibleKestraTest/roles/neo4j/tasks/firewall.yml for 172.16.237.138
+2024-10-29 07:53:01,510 p=65848 u=tonsmink n=ansible | TASK [neo4j : Enable service firewalld] ******************************************************************************************
+2024-10-29 07:53:01,511 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:53:02,372 p=65848 u=tonsmink n=ansible | TASK [neo4j : Setup firewallPort neo4j http] *************************************************************************************
+2024-10-29 07:53:02,373 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:53:03,141 p=65848 u=tonsmink n=ansible | TASK [neo4j : Setup firewallPort neo4j bolt] *************************************************************************************
+2024-10-29 07:53:03,141 p=65848 u=tonsmink n=ansible | ok: [172.16.237.138]
+2024-10-29 07:53:04,949 p=65848 u=tonsmink n=ansible | RUNNING HANDLER [kafka : Restart kafka service] **********************************************************************************
+2024-10-29 07:53:04,950 p=65848 u=tonsmink n=ansible | changed: [172.16.237.138]
+2024-10-29 07:53:04,966 p=65848 u=tonsmink n=ansible | PLAY RECAP ***********************************************************************************************************************
+2024-10-29 07:53:04,967 p=65848 u=tonsmink n=ansible | 172.16.237.138             : ok=77   changed=4    unreachable=0    failed=0    skipped=16   rescued=0    ignored=0   
