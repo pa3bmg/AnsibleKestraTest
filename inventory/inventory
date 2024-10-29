@@ -1,5 +1,5 @@
 [kafka]
-172.16.237.138
+172.16.131.179
 
 [kafka:vars]
 ansible_connection=ssh 
